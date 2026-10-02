@@ -1,5 +1,6 @@
 """Pre-result validation tests for Experiment Suite v4."""
 import importlib.util
+import sys
 from pathlib import Path
 
 P=Path(__file__).with_name("run_paper_experiments_v4.py")
