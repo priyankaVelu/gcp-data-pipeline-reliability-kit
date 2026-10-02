@@ -1,5 +1,7 @@
 # GCP Data Pipeline Reliability Kit
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23106610.svg)](https://doi.org/10.5281/zenodo.23106610)
+
 Open-source reliability patterns for production data pipelines on Google Cloud, BigQuery, Apache Airflow / Cloud Composer, and Python.
 
 ## Why this project exists
@@ -12,7 +14,7 @@ The goal is not to provide a full platform. It is to provide practical reference
 
 ## Initial roadmap
 
-The first release, **v0.1.0 — Production Reliability Foundations**, will focus on three areas:
+The first release, **v0.1.0 — Production Reliability Foundations**, establishes the initial reliability foundation in three areas:
 
 1. **Metadata-aware Airflow failure callbacks**
    - capture DAG and task context
@@ -69,7 +71,15 @@ docs/
 
 ## Project status
 
-This project is under active development. The first implementation milestone is **v0.1.0**.
+This project is under active development. **v0.1.0** is the first citable research-software release and is permanently archived on Zenodo.
+
+## Citation
+
+If you use this software in research or practice, cite the archived software release:
+
+**Priyanka Velumani. GCP Data Pipeline Reliability Kit, v0.1.0. Zenodo. https://doi.org/10.5281/zenodo.23106610**
+
+Machine-readable citation metadata is also available in [CITATION.cff](CITATION.cff).
 
 ## Who this is for
 
