@@ -3,7 +3,7 @@ import importlib.util
 from pathlib import Path
 
 P=Path(__file__).with_name("run_paper_experiments_v4.py")
-spec=importlib.util.spec_from_file_location("v4",P);v4=importlib.util.module_from_spec(spec);spec.loader.exec_module(v4)
+spec=importlib.util.spec_from_file_location("v4",P);v4=importlib.util.module_from_spec(spec);sys.modules[spec.name]=v4;spec.loader.exec_module(v4)
 
 def check(cond,msg):
     if not cond:raise AssertionError(msg)
