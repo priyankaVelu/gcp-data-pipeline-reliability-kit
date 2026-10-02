@@ -1,0 +1,1356 @@
+{
+  "schema_version": "3.0",
+  "generated_at": "2026-10-02T18:16:16.820820+00:00",
+  "commit_sha": "25c74f8fe244ab4dd45faa63763370cd129f9e14",
+  "python": "3.13.14",
+  "configuration": {
+    "sizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "seeds": [
+      1301,
+      2609,
+      3911,
+      5209,
+      6521
+    ],
+    "fault_rates": [
+      0.001,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "checkpoints": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "timing_repeats": 7
+  },
+  "observation_count": 660,
+  "results": [
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.002
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0024
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0029
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.002
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0024
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0028
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0019
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0023
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0028
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.002
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0024
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0028
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0208
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.024
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0294
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0231
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0269
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0323
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0209
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0252
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0298
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0208
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0245
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0297
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.5052
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.8404
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 1.0011
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.5143
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.8126
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.9637
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.3517
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.8682
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.9541
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.4692
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.9055
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "append_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.9451
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1832
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.188
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1965
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1728
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1865
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2038
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1653
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.179
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1931
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1712
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1822
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1956
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.6668
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.7349
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.8429
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.6621
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.7373
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.6875
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.684
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 3.0732
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 3.0561
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.6346
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.7358
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.9071
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 40.2056
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 42.1143
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 45.0773
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 39.2389
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 40.7927
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 44.4993
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 41.1206
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 42.9807
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 50.0214
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.25,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 39.5553
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.5,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 40.2925
+    },
+    {
+      "scenario": "checkpoint_recovery",
+      "strategy": "idempotent_replay",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": 0.75,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 44.76
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.1242
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.1174
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.1192
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.1209
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 1.7668
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 2.0652
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 2.132
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 2.0418
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 44.6388
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 45.7313
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 46.9763
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "arrival_last_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 43.4279
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.15
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.145
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1453
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1469
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.1141
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 1.9794
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.3864
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.1839
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 58.9899
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 61.1454
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 60.1798
+    },
+    {
+      "scenario": "conflicting_updates",
+      "strategy": "event_time_latest_write",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 57.9787
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0017
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0018
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0019
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0018
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0183
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0178
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0248
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0184
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.3905
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.4514
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.4063
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "arrival_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.3878
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.058
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0587
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0634
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0687
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.5898
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.6098
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.7432
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.7839
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 10.4676
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 11.5181
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 14.3728
+    },
+    {
+      "scenario": "late_arrival",
+      "strategy": "event_time_order",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 15.3662
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2601
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2713
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2787
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2728
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 4.3323
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 4.1007
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 4.5078
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 4.6745
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 94.6717
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 92.9675
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 94.1981
+    },
+    {
+      "scenario": "mixed_faults",
+      "strategy": "dedup_then_validate",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "checkpoint": null,
+      "runs": 5,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 109.0946
+    }
+  ],
+  "raw_sha256": "a40bdf6c8891848eba8142bf298668ed2f6a06b527c771244c0098d018345ce7"
+}
