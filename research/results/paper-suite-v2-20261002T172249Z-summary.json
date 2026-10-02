@@ -1,0 +1,991 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-02T17:22:49.794569+00:00",
+  "commit_sha": "b2dc5ec9e2fdbe36117d5cbdedca88a973c99679",
+  "python": "3.13.14",
+  "configuration": {
+    "sizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "seeds": [
+      1103,
+      2207,
+      3301,
+      4409,
+      5501
+    ],
+    "fault_rates": [
+      0.001,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "timing_repeats": 7
+  },
+  "observation_count": 480,
+  "results": [
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0876
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0853
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0853
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0865
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8369
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8393
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8395
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8507
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 10.7863
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 10.8305
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 10.6388
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 10.8756
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0899
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0889
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0893
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0897
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8728
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8966
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8628
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.8641
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 11.2724
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 11.2554
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 11.0995
+    },
+    {
+      "scenario": "bounded_recovery",
+      "strategy": "predicate_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 11.1046
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.137
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1423
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1442
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1457
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.162
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.0986
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.1713
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.5403
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 56.7764
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 55.1205
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 56.3148
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "set_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 60.8152
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1924
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2001
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2035
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.2167
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.8581
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.7207
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.8695
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 3.0565
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 69.7494
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 67.4697
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 71.1913
+    },
+    {
+      "scenario": "duplicate_replay",
+      "strategy": "sort_group_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 75.2415
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0594
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.059
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0591
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0597
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.5848
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.5813
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.6013
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.613
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 6.6808
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 6.5041
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 6.6243
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "explicit_loop_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 6.772
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0624
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0628
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0628
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.0635
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.6615
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.6546
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.6514
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.669
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 7.146
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 6.9551
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 7.0885
+    },
+    {
+      "scenario": "null_business_key",
+      "strategy": "kit_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 7.2139
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0014
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0014
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0014
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0014
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0152
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0143
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0145
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.0146
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.5654
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.5417
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.5472
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "append_replay_comparator",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 0.0,
+      "runtime_ms_median_across_runs": 0.5342
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1665
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1597
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.162
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 1000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 0.1604
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.1853
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.1356
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.2827
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 10000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 2.1613
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.001,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 33.907
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.01,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 34.5677
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.05,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 35.8837
+    },
+    {
+      "scenario": "partial_recovery",
+      "strategy": "idempotent_replay_control",
+      "dataset_size": 100000,
+      "fault_rate": 0.1,
+      "runs": 5,
+      "detection_rate": 1.0,
+      "correct_run_rate": 1.0,
+      "runtime_ms_median_across_runs": 34.5013
+    }
+  ],
+  "raw_sha256": "9e0291330c31713695d93c9b265a3b24934e32fb0ed8f07d1ee351a49e6f5884"
+}
