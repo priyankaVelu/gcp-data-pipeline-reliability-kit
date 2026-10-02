@@ -1,38 +1,41 @@
 # Experiment protocol
 
 ## Objective
-Evaluate whether explicit reliability controls improve correctness and recoverability under controlled data-pipeline faults.
+Evaluate whether explicit reliability controls improve correctness and fault detection under controlled synthetic data-pipeline faults, and quantify their local execution overhead.
 
-## Baseline
-A minimal pipeline without the reliability control under test.
+## Study design
+For each scenario, execute a deliberately minimal baseline and a controlled treatment on the same generated workload. The baseline omits only the reliability control under test. Do not describe the baseline as representative of all production systems.
 
-## Treatment
-The same workload with one or more reliability controls enabled.
+## Data and reproducibility
+Use generated synthetic event data only. Generation uses deterministic seeds. Every result records the Git commit SHA and Python version. Raw CSV output is hashed with SHA-256 and the digest is stored in the summary.
 
-## Data
-Use generated synthetic event data with deterministic seeds. Public datasets may be added later with their licenses and provenance recorded.
+## Confirmatory v1 matrix
+- Dataset sizes: 1,000; 10,000; 100,000 rows.
+- Seeds: 101, 202, 303, 404, 505.
+- Fault injection rate: 1%.
+- Scenarios: duplicate replay, null business key, bounded backfill, stale data.
+- Variants: baseline and controlled.
 
-## Fault scenarios
-- duplicate input events
-- missing/null business keys
-- conflicting current-state records
-- delayed events
-- partial-batch failure
-- replay of an already processed interval
+Changes to this matrix after examining results must be documented as exploratory or as a new protocol version.
 
-## Required repetitions
-Each benchmark configuration should be repeated with multiple deterministic seeds. Report all observations and aggregate statistics; do not discard unfavorable runs without a documented protocol reason.
+## Outcomes
+1. Fault detection rate = detected injected faults / injected faults.
+2. Correct-run rate = runs satisfying the predeclared scenario invariant / total runs.
+3. Local runtime: mean and median elapsed milliseconds.
 
-## Primary outcomes
-1. Output correctness.
-2. Fault detection.
-3. Idempotent recovery.
-4. Runtime overhead.
+## Scenario invariants
+- Duplicate replay: controlled output has exactly the original number of unique event IDs and reports all injected duplicates.
+- Null business key: controlled validation reports every injected null key.
+- Bounded backfill: controlled output contains exactly events in [start, end).
+- Stale data: controlled freshness check flags an event two hours old when the threshold is one hour.
+
+## Limitations
+The experiment is an in-process Python synthetic benchmark. It does not measure network, storage, scheduler, BigQuery, Dataflow, or Cloud Composer behavior. Timing results therefore support only local implementation-overhead observations. Larger cloud experiments require a separately specified protocol and cost/environment record.
 
 ## Evidence integrity
 - Preserve raw machine-generated results.
-- Record code commit SHA with each run.
-- Record environment/dependency versions.
-- Do not fabricate or manually alter results.
+- Record code commit SHA and environment.
+- Do not fabricate, manually alter, cherry-pick, or suppress observations.
 - Document failed experiments as failures.
-- Separate exploratory analysis from confirmatory results.
+- Keep exploratory analyses separate from confirmatory results.
+- Make publication claims only after inspecting generated evidence and applicable literature.
