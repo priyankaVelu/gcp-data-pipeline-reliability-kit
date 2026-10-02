@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software in research or practice, please cite the software release."
+title: "GCP Data Pipeline Reliability Kit"
+type: software
+authors:
+  - family-names: "Velumani"
+    given-names: "Priyanka"
+    orcid: "https://orcid.org/0009-0009-4129-6796"
+repository-code: "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-10-02
+keywords:
+  - data engineering
+  - data reliability
+  - Google Cloud
+  - BigQuery
+  - Apache Airflow
+  - reproducible research
