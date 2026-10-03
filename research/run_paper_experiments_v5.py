@@ -982,8 +982,22 @@ def main():
     failures = []
     rows = []
 
+    print(
+        f"V5 execution starting | commit={commit_sha} | "
+        "expected observations=480",
+        flush=True,
+    )
+
     try:
+        print(
+            "V5 progress: starting principal matrix (180 observations)...",
+            flush=True,
+        )
         rows.extend(principal_observations(commit_sha))
+        print(
+            "V5 progress: principal matrix complete (180/480).",
+            flush=True,
+        )
     except Exception as exc:
         failures.append(
             {
@@ -994,7 +1008,15 @@ def main():
         raise
 
     try:
+        print(
+            "V5 progress: starting isolated controls (300 observations)...",
+            flush=True,
+        )
         rows.extend(control_observations(commit_sha))
+        print(
+            "V5 progress: controls complete (480/480).",
+            flush=True,
+        )
     except Exception as exc:
         failures.append(
             {
