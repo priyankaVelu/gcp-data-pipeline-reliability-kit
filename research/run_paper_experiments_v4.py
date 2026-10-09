@@ -127,7 +127,7 @@ def inject(rows,seed,duplicate_rate=0,null_key_rate=0,late_rate=0,conflict_rate=
         replay_n=max(1,int(cut*replay_fraction))
         replay=[dict(x) for x in work[:replay_n]]
         for x in replay:x["fault_tags"]=tuple(sorted(set(x["fault_tags"])|{"recovery_replay"}))
-        work=replay+work
+        work=work+replay
         replayed=len(replay)
 
     realized={"duplicate":len(duplicates),"null_key":len(null_ids),"late":len(late_ids),
@@ -161,8 +161,8 @@ def process(work,strategy):
     state=latest_state(valid,spec.temporal)
     return valid,state,{"duplicate":dup_detected,"null_key":invalid_detected,
                         "recovery_replay":recovery_detected,
-                        "late":sum("late" in x["fault_tags"] for x in work) if spec.temporal else 0,
-                        "conflict":sum("conflict" in x["fault_tags"] for x in work) if spec.temporal else 0}
+                        "late":0,
+                        "conflict":0}
 
 def metrics(valid,state,oracle,realized,detected):
     expected_ids=oracle["event_ids"]; oracle_state=oracle["state"]; entities=oracle["entities"]
