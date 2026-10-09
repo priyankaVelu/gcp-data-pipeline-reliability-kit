@@ -1,0 +1,3 @@
+include docs/cli.md
+recursive-include examples/cli *.csv *.json
+recursive-include research *.py

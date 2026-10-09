@@ -2,13 +2,35 @@ name: test
 on:
   push:
   pull_request:
+permissions:
+  contents: read
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12', '3.13']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install build
       - run: python -m unittest discover -s tests -v
+      - run: python research/test_paper_experiments_v4.py
+      - run: python research/test_paper_experiments_v5.py
       - run: python research/run_experiments.py
+      - run: python -m build
+      - name: Install wheel and check outside checkout
+        shell: bash
+        run: |
+          python -m venv /tmp/reliability-install
+          /tmp/reliability-install/bin/python -m pip install dist/*.whl
+          cd /tmp
+          /tmp/reliability-install/bin/pipeline-reliability freshness --synthetic --timestamp-column event_ts --max-age-seconds 3600 --now 2026-01-01T02:30:00Z
+          set +e
+          /tmp/reliability-install/bin/pipeline-reliability duplicate-keys --synthetic --keys id > result.json
+          status=$?
+          set -e
+          test "$status" -eq 1
+          /tmp/reliability-install/bin/python -c 'import json; r=json.load(open("result.json")); assert r["result"]["duplicate_groups"] == 1'
