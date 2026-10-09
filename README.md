@@ -4,6 +4,13 @@
 
 Open-source reliability patterns for production data pipelines on Google Cloud, BigQuery, Apache Airflow / Cloud Composer, and Python.
 
+## Local command-line tool
+
+Install with `python -m pip install .` (Python 3.10+) to use `pipeline-reliability`
+for CSV duplicate-key, null-key, freshness, and duplicate-current-record checks.
+No cloud credentials are required. See the [five-minute quickstart](docs/cli.md)
+for synthetic examples, configuration, JSON output, and exit codes.
+
 ## Why this project exists
 
 Production data pipelines fail in predictable ways: incomplete failure context, unsafe backfills, weak data-quality checks, duplicate processing, stale data, and insufficient auditability.

@@ -1,0 +1,1 @@
+{"csv": "examples/cli/events.csv", "timestamp_column": "event_ts", "max_age_seconds": 3600, "now": "2026-01-01T02:30:00Z"}
