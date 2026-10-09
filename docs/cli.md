@@ -36,7 +36,22 @@ Choose `--csv PATH` or `--synthetic`. CSV must have unique, nonempty headers and
 consistent field counts. UTF-8 (including BOM), quoted fields, and composite keys
 are supported. Key values are case-sensitive strings with surrounding whitespace
 trimmed. Literal `NULL` is a string, not a null marker. Duplicate checks exclude
-empty keys and report their count; run `null-keys` separately to enforce completeness.
+empty keys from duplicate counting and report their count. This default behavior
+is preserved. Add `--strict` to either duplicate command to fail if **any input row**
+has an empty or whitespace-only key component, including historical/non-current
+rows in `duplicate-current`. Strict mode leaves duplicate counts unchanged and
+adds a completeness condition. Results include `strict` and `invalid_key_rows`
+(across all input rows); `null_key_rows_excluded` counts only selected rows.
+Run `null-keys` separately for bounded row-number samples.
+
+```sh
+pipeline-reliability duplicate-keys --csv examples/cli/events.csv --keys id --strict
+pipeline-reliability duplicate-current --synthetic --keys id --current-column is_current --strict
+```
+
+JSON configuration supports `"strict": true` or `false`. `--strict` overrides a
+configured false value; `--no-strict` overrides true. These options are available
+only for the two duplicate commands. Strict data failures exit 1, not 2.
 Current flags accept `true`, `false`, `1`, `0` (case-insensitive). Other flags are input
 errors. Timestamps must be timezone-aware ISO 8601; offsets and `Z` are supported.
 Every timestamp is validated, not just the latest. The freshness boundary is inclusive.
@@ -47,7 +62,7 @@ An empty dataset fails every check rather than silently passing.
 Every check emits one JSON object on stdout, including errors:
 
 ```json
-{"schema_version":"1.0","command":"duplicate-keys","status":"fail","result":{"passed":false,"rows_checked":3,"selected_rows":3,"duplicate_groups":1,"duplicate_rows":2,"excess_rows":1,"null_key_rows_excluded":1}}
+{"schema_version":"1.0","command":"duplicate-keys","status":"fail","result":{"passed":false,"rows_checked":3,"strict":false,"invalid_key_rows":1,"selected_rows":3,"duplicate_groups":1,"duplicate_rows":2,"excess_rows":1,"null_key_rows_excluded":1}}
 ```
 
 Exit codes: **0** check passed, **1** data-quality failure, **2** input/configuration
@@ -58,7 +73,9 @@ numbers, starting at 1 (excluding the header). Results do not include raw key va
 `--config FILE` accepts a JSON object using option names with underscores, for example
 `csv`, `keys`, `timestamp_column`, `max_age_seconds`, `now`, and `current_column`.
 Only fields valid for that command are accepted. Explicit CLI options override
-configuration values. Paths are relative to the current working directory.
+configuration values, including keys, thresholds and reference timestamps. An explicit
+`--csv` replaces a configured synthetic source; `--synthetic` replaces a configured
+CSV source. Boolean configuration values must be JSON booleans, not strings. Paths are relative to the current working directory.
 See `examples/cli/duplicate-keys.json` and `examples/cli/freshness.json`.
 
 This initial implementation loads the CSV in memory. It provides local checks,

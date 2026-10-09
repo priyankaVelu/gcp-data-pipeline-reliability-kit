@@ -34,3 +34,4 @@ jobs:
           set -e
           test "$status" -eq 1
           /tmp/reliability-install/bin/python -c 'import json; r=json.load(open("result.json")); assert r["result"]["duplicate_groups"] == 1'
+          /tmp/reliability-install/bin/python "$GITHUB_WORKSPACE/tests/installed_cli_smoke.py"

@@ -3,10 +3,9 @@ import argparse
 import csv
 import json
 import math
-import sys
 from pathlib import Path
 
-from .checks import check
+from .checks import check, timestamp
 
 
 class Parser(argparse.ArgumentParser):
@@ -29,6 +28,9 @@ def parser():
             sub.add_argument("--now", help="Timezone-aware ISO 8601 reference time")
         else:
             sub.add_argument("--keys", nargs="+")
+        if name in {"duplicate-keys", "duplicate-current"}:
+            sub.add_argument("--strict", action=argparse.BooleanOptionalAction, default=None,
+                             help="Fail on empty business keys anywhere in the input (--no-strict overrides config)")
         if name == "duplicate-current":
             sub.add_argument("--current-column")
     return root
@@ -80,6 +82,10 @@ def main(argv=None):
             raise ValueError("synthetic must be a boolean")
         if bool(csv_path) == use_synthetic:
             raise ValueError("choose exactly one source: --csv or --synthetic")
+        if "strict" in config and not isinstance(config["strict"], bool):
+            raise ValueError("strict must be a boolean")
+        if csv_path is not None and not isinstance(csv_path, (str, Path)):
+            raise ValueError("csv must be a file path")
         keys = config.get("keys")
         if command != "freshness" and (not isinstance(keys, list) or not keys or
                 any(not isinstance(key, str) or not key for key in keys)):
@@ -88,6 +94,10 @@ def main(argv=None):
             limit = config.get("max_age_seconds")
             if isinstance(limit, bool) or not isinstance(limit, (int, float)) or not math.isfinite(limit) or limit < 0:
                 raise ValueError("max_age_seconds must be a finite nonnegative number")
+            if "now" in config:
+                timestamp(config["now"])
+        if keys and len(set(keys)) != len(keys):
+            raise ValueError("provide one or more distinct keys")
         required = list(keys or [])
         for field in ("timestamp_column", "current_column"):
             if field in args:
@@ -102,7 +112,7 @@ def main(argv=None):
         output = {"schema_version": "1.0", "command": command,
                   "status": "pass" if result["passed"] else "fail", "result": result}
         code = 0 if result["passed"] else 1
-    except (ValueError, TypeError, OSError, csv.Error, KeyError) as exc:
+    except (ValueError, TypeError, OSError, csv.Error, KeyError, OverflowError) as exc:
         output = {"schema_version": "1.0", "command": command, "status": "error", "error": str(exc)}
         code = 2
     print(json.dumps(output, allow_nan=False))

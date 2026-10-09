@@ -17,13 +17,13 @@ def timestamp(value):
 
 
 def check(rows, command, *, keys=None, timestamp_column=None,
-          max_age_seconds=None, now=None, current_column=None):
+          max_age_seconds=None, now=None, current_column=None, strict=False):
     if not rows:
         return {"passed": False, "rows_checked": 0, "reason": "empty_dataset"}
     if command == "freshness":
         if max_age_seconds is None or not math.isfinite(max_age_seconds) or max_age_seconds < 0:
             raise ValueError("max_age_seconds must be a finite nonnegative number")
-        reference = timestamp(now) if now else datetime.now(timezone.utc)
+        reference = timestamp(now) if now is not None else datetime.now(timezone.utc)
         times = []
         for index, row in enumerate(rows, 1):
             try:
@@ -55,7 +55,8 @@ def check(rows, command, *, keys=None, timestamp_column=None,
     counts = Counter(tuple(row[key] for key in keys) for row in selected
                      if all(row[key] != "" for key in keys))
     duplicates = [count for count in counts.values() if count > 1]
-    return {"passed": not duplicates, "rows_checked": len(rows),
+    return {"passed": not duplicates and (not strict or not nulls), "rows_checked": len(rows),
+            "strict": strict, "invalid_key_rows": len(nulls),
             "selected_rows": len(selected), "duplicate_groups": len(duplicates),
             "duplicate_rows": sum(duplicates),
             "excess_rows": sum(count - 1 for count in duplicates),
