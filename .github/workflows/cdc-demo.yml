@@ -1,0 +1,31 @@
+name: CDC demo and research regression
+on:
+  push:
+    branches:
+      - feature/sigmod2027-cdc-replay-demo
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Full unittest suite
+        run: python -m unittest discover -s tests -v
+      - name: Frozen research regression tests (when present)
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in research/test_paper_experiments_v4.py research/test_paper_experiments_v5.py; do
+            if test -f "$f"; then python "$f"; else echo "Not present on this branch: $f"; fi
+          done
+      - name: Reproducible CDC JSON demonstration
+        run: python -m pipeline_reliability.cdc_demo --seed 7 --checkpoint-after 2 --interrupt-after 5
