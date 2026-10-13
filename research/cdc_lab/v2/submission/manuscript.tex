@@ -1,6 +1,6 @@
 % Versioned revision of the PR #15 review draft. Historical source/PDF unchanged.
-% Provisional review format; 2027 CFP and production template remain unverified.
-\documentclass[sigconf,anonymous,review]{acmart}
+% Venue CFP requirements verified; production template/font/PDF rebuild still pending.
+\documentclass[sigconf,9pt,review]{acmart}
 % Scalable preview fallback only when the ACM class reports missing fonts.
 \makeatletter\if@ACM@newfonts\else\usepackage{lmodern}\fi\makeatother
 \setcopyright{none}
@@ -10,7 +10,10 @@
 \acmDOI{}
 \acmISBN{}
 \title{CDC Replay Correctness Lab: Making Stable but Incorrect State Visible}
-\author{Authors pending venue and overlap review}
+% Nonanonymous track: replace the following explicit placeholder with verified author metadata before submission.
+\author{Author metadata pending verification}
+\affiliation{\institution{Affiliation pending verification}\country{United States}}
+% Do not submit this placeholder or claim an institutional affiliation without approval.
 \begin{abstract}
 Change-data capture consumers can produce a stable but incorrect materialization:
 identity deduplication does not order distinct changes, and finite identity memory
@@ -217,10 +220,13 @@ unchanged. Paper 1's submitted source is absent from this checkout and needs own
 overlap review; it has not been edited or imported here.
 
 This is a versioned revision of the prior Paper 2 draft. It is \emph{not submission-ready}:
-the official 2027 CFP/portal remains inaccessible, page/anonymity/registration/video
-rules are unknown, the production template is unverified and local ACM fonts are
-missing. The generated PDF is a provisional ACM-class preview, not a compliance claim.
-No conference submission or automatic merge is performed.
+the official SIGMOD 2027 Demonstrations CFP requires a nonanonymous, 9-point ACM
+\texttt{sigconf} manuscript on US Letter paper, with at most four pages including
+references. The source has been adjusted to those rules, but the current PDF predates
+this change and must be rebuilt. Author/affiliation metadata, current production
+template/fonts, CMT submission access, and Paper 1 overlap review remain unresolved.
+An optional demonstration video may be linked only once recorded and hosted. No
+conference submission or automatic merge is performed.
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
 \end{document}
