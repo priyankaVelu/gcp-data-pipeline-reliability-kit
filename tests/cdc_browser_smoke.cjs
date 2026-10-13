@@ -5,6 +5,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 
 (async () => {
+  const started=Date.now();
   const child = spawn(process.env.CDC_DEMO_PYTHON || 'python3',
     ['-m','pipeline_reliability.cdc_interactive','--port','0'],
     {cwd:process.env.CDC_DEMO_CWD || path.resolve(__dirname,'..'),stdio:['ignore','pipe','pipe']});
@@ -23,6 +24,8 @@ const assert = require('node:assert/strict');
     await page.locator('#counterexample').click();
     await page.waitForFunction(()=>document.querySelector('#actual').textContent.includes('"version": 3'));
     assert.match(await page.locator('#wrong').textContent(),/k0: stale version/);
+    const elapsed=(Date.now()-started)/1000;assert.ok(elapsed<60,'counterexample exceeded one minute');
+    console.log(`Deterministic baseline failure reproduced in ${elapsed.toFixed(3)} seconds.`);
     await page.locator('#strategy').selectOption('id_only');await page.locator('#run').click();
     await page.getByText('Incorrect final state',{exact:true}).waitFor();
     await page.locator('#strategy').selectOption('version');await page.locator('#run').click();
@@ -42,7 +45,7 @@ const assert = require('node:assert/strict');
     await page.getByText('Online processing stopped',{exact:true}).waitFor();
     assert.match(await page.locator('#explanation').textContent(),/conflicting event ID/);
     await page.locator('#counterexample').click();await page.getByText('Incorrect final state',{exact:true}).waitFor();
-    if(process.env.CDC_SCREENSHOT)await page.screenshot({path:process.env.CDC_SCREENSHOT,fullPage:true});
+    if(process.env.CDC_SCREENSHOT)await page.screenshot({path:process.env.CDC_SCREENSHOT,fullPage:false});
     assert.deepEqual(errors,[]);
     console.log('Real-browser walkthrough passed: preset, strategies, trace, checkpoint/recovery, finite/unlimited ledger, conflict warning; no JS errors.');
   } finally {

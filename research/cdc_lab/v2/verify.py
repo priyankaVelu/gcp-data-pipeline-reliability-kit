@@ -27,7 +27,8 @@ def verify(directory):
             raise ValueError(f'hash mismatch: {name}')
     data = json.loads((directory/'results.json').read_text())
     for group in ('principal','bounded'):
-        rows = list(csv.DictReader((directory/f'{group}.csv').open(newline='')))
+        with (directory/f'{group}.csv').open(newline='') as handle:
+            rows = list(csv.DictReader(handle))
         if len(rows) != len(data[group]):
             raise ValueError(f'row count mismatch: {group}')
         fields = set().union(*(row.keys() for row in data[group]))

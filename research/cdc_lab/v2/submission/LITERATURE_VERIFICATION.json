@@ -1,0 +1,235 @@
+{
+  "checked": "2026-10-13",
+  "limitations": "Focused review, not systematic novelty search. NoREC ACM full-text endpoint returns 403; its bibliographic citation is verified, not a claimed implementation comparison.",
+  "records": [
+    {
+      "authors": [
+        {
+          "affiliation": [
+            {
+              "name": "Department of Computer Sciences, University of Texas at Austin, Austin, TX"
+            }
+          ],
+          "family": "Chandy",
+          "given": "K. Mani",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "first"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "Stanford Research Institute, Menlo Park, CA"
+            }
+          ],
+          "family": "Lamport",
+          "given": "Leslie",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        }
+      ],
+      "container": [
+        "ACM Transactions on Computer Systems"
+      ],
+      "doi": "10.1145/214451.214456",
+      "fulltext_read": true,
+      "issue": "1",
+      "key": "snapshots",
+      "note": "Metadata verified; full text previously read from academic mirror in earlier audit",
+      "page": "63-75",
+      "published_online": {
+        "date-parts": [
+          [
+            1985,
+            2
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            1985,
+            2
+          ]
+        ]
+      },
+      "title": [
+        "Distributed snapshots"
+      ],
+      "verified_from": "https://api.crossref.org/works/10.1145/214451.214456",
+      "volume": "3"
+    },
+    {
+      "authors": [
+        {
+          "affiliation": [],
+          "family": "Utting",
+          "given": "Mark",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "first"
+        },
+        {
+          "affiliation": [],
+          "family": "Pretschner",
+          "given": "Alexander",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        },
+        {
+          "affiliation": [],
+          "family": "Legeard",
+          "given": "Bruno",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        }
+      ],
+      "container": [
+        "Software Testing, Verification and Reliability"
+      ],
+      "doi": "10.1002/stvr.456",
+      "fulltext_read": false,
+      "issue": "5",
+      "key": "mbt",
+      "note": "Crossref metadata and abstract inspected; full text not retrieved in this task",
+      "page": "297-312",
+      "published_online": {
+        "date-parts": [
+          [
+            2011,
+            4,
+            12
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2012,
+            8
+          ]
+        ]
+      },
+      "title": [
+        "A taxonomy of model\u2010based testing approaches"
+      ],
+      "verified_from": "https://api.crossref.org/works/10.1002/stvr.456",
+      "volume": "22"
+    },
+    {
+      "authors": [
+        {
+          "affiliation": [
+            {
+              "name": "ETH Zurich, Switzerland"
+            }
+          ],
+          "family": "Rigger",
+          "given": "Manuel",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "first"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "ETH Zurich, Switzerland"
+            }
+          ],
+          "family": "Su",
+          "given": "Zhendong",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        }
+      ],
+      "container": [
+        "Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering"
+      ],
+      "doi": "10.1145/3368089.3409710",
+      "fulltext_read": false,
+      "issue": null,
+      "key": "norec",
+      "note": "Crossref metadata and abstract inspected; full text not retrieved in this task",
+      "page": "1140-1152",
+      "published_online": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            8
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            8
+          ]
+        ]
+      },
+      "title": [
+        "Detecting optimization bugs in database engines via non-optimizing reference engine construction"
+      ],
+      "verified_from": "https://api.crossref.org/works/10.1145/3368089.3409710",
+      "volume": null
+    },
+    {
+      "fulltext_read": true,
+      "key": "millwheel",
+      "sha256": "2131f6f8b7ec5ede35559ab1a68e8d3697c1a27edf1d381efd0f49b778da9159",
+      "verified_from": "https://www.vldb.org/pvldb/vol6/p1033-akidau.pdf"
+    },
+    {
+      "fulltext_read": true,
+      "key": "dataflow",
+      "sha256": "7eeb8be6b52f2a9d2eb509a8616f748831fb48fab59ef2f5e83fca7b374bea18",
+      "verified_from": "https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf"
+    },
+    {
+      "fulltext_read": true,
+      "key": "debezium",
+      "sha256": "652d73ecc0e995e870935c9d906646262a169c04f4bdf094b629c7af2d80e91e",
+      "verified_from": "https://github.com/debezium/debezium/blob/d9e8eeb71f617586ac2cff41ebef2ca7f4ee308e/documentation/modules/ROOT/pages/connectors/postgresql.adoc"
+    },
+    {
+      "fulltext_read": true,
+      "key": "raftscope",
+      "sha256": "466d94e952cf2bb3e69acf1d7f1ae8d70c897b8d6f347c19a0dcd614c4987e9b",
+      "verified_from": "https://github.com/ongardie/raftscope/tree/5b0c10ab51f873721895e7470b49e04c94bf826f"
+    }
+  ]
+}
