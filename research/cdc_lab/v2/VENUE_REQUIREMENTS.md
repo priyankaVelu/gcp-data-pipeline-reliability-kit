@@ -1,41 +1,38 @@
-# SIGMOD 2027 Demonstrations: compliance status
+# SIGMOD 2027 Demonstrations — official submission requirements
 
-Checked 2026-10-13. Status: **blocked; not submission-ready**.
+Verified October 13, 2026 from the official conference CFP:
+https://2027.sigmod.org/calls_sigmod_demos.shtml
+Official deadlines: https://2027.sigmod.org/calls_papers_important_dates.shtml
 
-Authoritative CFP requested: https://2027.sigmod.org/ . The environment proxy returns
-HTTP 403 on CONNECT. No 2026 deadline, page limit or review policy is assumed to apply
-to 2027. The official submission portal could not be discovered or verified.
+This replaces the earlier "all requirements unknown" note after the official CFP became accessible via a separate retrieval environment. **Manuscript is still not submission-ready.**
 
-| Requirement | Verified status | Required action |
+| Requirement | Official rule | Manuscript action |
 | --- | --- | --- |
-| Track name and eligibility | User-specified target only | Read official 2027 Demonstrations CFP |
-| Deadline/timezone | Unknown | Confirm exact date/time/timezone from CFP/portal |
-| Page limit and whether references count | Unknown | Confirm before cutting final manuscript |
-| Required template/options | Unknown | Confirm ACM class, size and review settings |
-| Anonymous review policy | Unknown | Confirm; anonymous preview is provisional |
-| Author/ORCID/registration | Unknown | Confirm portal requirements |
-| Artifact/video rules | Unknown | Confirm mandatory/optional content and lengths |
-| Originality/concurrent submission | Unknown | Check official policy and overlap with ACMSE Paper 1 |
-| Accessibility/metadata/TAPS production | Unknown | Check current ACM and venue instructions |
+| Track | SIGMOD 2027 Demonstrations | Keep demonstration-centered claims and audience interaction |
+| Deadline | Monday, January 11, 2027, 11:59 PM Anywhere on Earth | Submit early; confirm live portal |
+| COI deadline | 24 hours after submission deadline (Jan 12 AoE) | Every author declares individual domains and PC conflicts in CMT |
+| Acceptance | March 8, 2027 | Informational |
+| PDF | Single PDF, US Letter 8.5 x 11 inches | Validate page dimensions |
+| Page limit | At most FOUR pages **including bibliography and all other material** | Check built PDF |
+| Template | Latest official ACM Proceedings `sample-sigconf.tex` or ACM_SigConf.docx | Obtain official current template from https://www.acm.org/publications/proceedings-template |
+| Font | **9 pt**; LaTeX `\\documentclass[sigconf,9pt]{acmart}` | Replace current anonymous/review 10pt declaration; preserve margins and spacing |
+| Review | **NOT double-blind** | Include actual author names and affiliations in PDF; remove `anonymous` |
+| Authors | Every author has registered CMT account and ORCID | Owner must supply verified metadata; never invent |
+| Video | Optional, <=5 minutes, hosted online | If supplied, include URL in proposal abstract; do not fabricate |
+| Industry demos | Append `[Industry]` to submission title when opting into industry-demo designation | Confirm whether industry designation is appropriate; do not assume |
+| Selection | Intellectual contribution + working system + audience experience | Clearly show interactions, architecture, novel aspects and related work |
+| Concurrent work | Review applicable originality and duplicate-submission policies | Compare ACMSE Paper 1 before submission; do not assume independence solely from different title |
+| Submission | CMT link from official demonstration CFP | Verify actual demo submission entry is available before final upload |
 
-No requirement above is marked complete. No chairs were contacted: the task does
-not authorize sending messages on the user's behalf. The owner should obtain the
-CFP or clarification from chairs if access remains blocked.
+Additional requirements: demonstrate implemented vs planned features accurately; cite related system publications; follow conference diversity and inclusion writing guidance. Formatting violations can cause desk rejection.
 
-## Template provenance and current PDF
+## Outstanding blockers
 
-The revised source is a new version at `v2/submission/manuscript.tex`, based on the
-original Paper 2 manuscript but preserving its bytes. ACM `acmart` upstream release
-v2.20 was retrieved through the GitHub API from
-https://github.com/borisveytsman/acmart/tree/v2.20 . The upstream README states that
-GitHub development versions are not production releases; using a release tag here
-is a provisional review build, **not verification of the official venue template**.
-The class is unmodified; its standard fallback is used when ACM fonts are unavailable.
-CTAN access (https://mirrors.ctan.org/macros/latex/contrib/acmart.zip) and the ACM
-production guidance site also return proxy 403. Libertine/Inconsolata/NewTX fonts
-are missing locally. Any fallback-font build is explicitly an incomplete ACM preview.
+1. Update `v2/submission/manuscript.tex` to nonanonymous 9pt `sigconf` and add real verified author/affiliation data. No author identity should be invented.
+2. Rebuild using current official ACM template and required fonts; check four-page limit **including references**, letter dimensions, and PDF quality.
+3. Check actual CMT demonstration-track portal availability, every author's CMT and ORCID registration, and COI declarations.
+4. Decide whether to record/host a real five-minute video; include its URL in abstract only if real.
+5. Perform substantive overlap and concurrent-submission review against the actual ACMSE 2027 submitted manuscript, which is not in this repository checkout.
+6. Expand and verify related work and evaluate whether the demonstration's contribution meets SIGMOD's competitive standard.
 
-Before submission: obtain the officially required production template, install its
-required fonts, verify every CFP rule above, supply confirmed authors/ORCIDs, verify
-Paper 1 overlap and rights/anonymity rules, and rebuild/check the final PDF. Never
-infer readiness from a successful LaTeX compile or an arbitrary four-page length.
+Historical PR #15 results and submitted ACMSE Paper 1 remain protected. Do not merge or submit automatically.
