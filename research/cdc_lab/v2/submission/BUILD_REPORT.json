@@ -1,0 +1,13 @@
+{
+  "class_sha256": "784c4f2fb07a70d8a797ee9d1c63f441c10fbd2f915c9c615d28cda35c0b742a",
+  "pages": 4,
+  "pdf_sha256": "575eeb5761b6867d88485a3224f99e2d18a06131ff26884c166e65990946a0e4",
+  "source_sha256": "ab8beaf407837c4092576658775dd7f7426ffbd6967e7d975238dae429318d2c",
+  "status": "preview_only_not_submission_ready",
+  "venue_requirements_verified": false,
+  "warnings": [
+    "Class acmart Warning: You do not have the libertine package installed. Please u",
+    "Class acmart Warning: You do not have the inconsolata (zi4.sty) package install",
+    "Class acmart Warning: You do not have the newtxmath package installed. Please u"
+  ]
+}

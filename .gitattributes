@@ -1,0 +1,2 @@
+# Preserve standard-library baseline CSV bytes, including their conventional CRLF.
+research/cdc_lab/v2/results/baseline-reproduction-*/*.csv whitespace=cr-at-eol
