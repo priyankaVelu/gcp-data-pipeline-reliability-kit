@@ -39,7 +39,7 @@ Risk-aware greedy: highest newly protected expected loss / marginal shared cost.
 Coverage greedy: highest number of newly covered exposed pairs, ignoring weights.
 Cost-aware greedy: highest newly covered pair count / marginal shared cost (an
 unweighted coverage-per-cost baseline). All recompute after each selection and only
-add budget-feasible positive-gain checks. Free positive gains rank before paid ones;
+add budget-feasible positive-gain checks. For ratio policies, free positive gains rank before paid ones;
 ties prefer greater absolute gain, lower marginal cost, then ID. These are defined
 heuristics, not claims of canonical baselines or approximation guarantees. Setup
 costs can cause every singleton greedy to miss a jointly beneficial shared-scan
