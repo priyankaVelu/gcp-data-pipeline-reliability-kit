@@ -1,0 +1,94 @@
+{
+  "checks": [
+    {
+      "detections": [
+        [
+          "f1",
+          "bulk"
+        ],
+        [
+          "f1",
+          "critical"
+        ]
+      ],
+      "evaluation_cost": "1",
+      "id": "A",
+      "scans": [
+        "shared"
+      ]
+    },
+    {
+      "detections": [
+        [
+          "f1",
+          "critical"
+        ],
+        [
+          "f2",
+          "critical"
+        ]
+      ],
+      "evaluation_cost": "1",
+      "id": "B",
+      "scans": [
+        "shared"
+      ]
+    },
+    {
+      "detections": [
+        [
+          "f1",
+          "critical"
+        ]
+      ],
+      "evaluation_cost": "1",
+      "id": "redundant",
+      "scans": [
+        "shared"
+      ]
+    }
+  ],
+  "consumers": [
+    {
+      "id": "bulk",
+      "loss": "10"
+    },
+    {
+      "id": "critical",
+      "loss": "100"
+    }
+  ],
+  "exposures": [
+    {
+      "consumer": "bulk",
+      "fault": "f1",
+      "severity": "1"
+    },
+    {
+      "consumer": "critical",
+      "fault": "f1",
+      "severity": "1"
+    },
+    {
+      "consumer": "critical",
+      "fault": "f2",
+      "severity": "1"
+    }
+  ],
+  "faults": [
+    {
+      "id": "f1",
+      "probability": "1/5"
+    },
+    {
+      "id": "f2",
+      "probability": "3/10"
+    }
+  ],
+  "scans": [
+    {
+      "id": "shared",
+      "setup_cost": "4"
+    }
+  ]
+}
