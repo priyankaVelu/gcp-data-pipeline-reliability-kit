@@ -1,0 +1,53 @@
+name: CDC submission evidence and live UI
+on:
+  pull_request:
+  push:
+    branches: [research/paper2-sigmod-submission]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  submission-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m unittest discover -s tests -v
+      - run: python research/test_paper_experiments_v4.py
+      - run: python research/test_paper_experiments_v5.py
+      - name: Independent baseline execution and non-timing comparison
+        run: |
+          python research/cdc_lab/run.py --output /tmp/cdc-baseline-reproduced
+          python research/cdc_lab/v2/verify.py --original research/cdc_lab/results/run-1 --reproduced /tmp/cdc-baseline-reproduced --report /tmp/cdc-baseline-comparison.json
+      - run: python research/cdc_lab/v2/run.py --output /tmp/cdc-isolated-v2
+      - name: Build and install wheel outside checkout
+        run: |
+          python -m pip install build
+          python -m build --outdir /tmp/cdc-dist
+          python -m venv /tmp/cdc-installed
+          /tmp/cdc-installed/bin/python -m pip install /tmp/cdc-dist/*.whl
+          cd /tmp
+          /tmp/cdc-installed/bin/python "$GITHUB_WORKSPACE/tests/installed_cli_smoke.py"
+      - name: Real-browser five-minute walkthrough
+        env:
+          NODE_PATH: /tmp/cdc-browser/node_modules
+          CDC_DEMO_PYTHON: /tmp/cdc-installed/bin/python
+          CDC_DEMO_CWD: /tmp
+          CDC_SCREENSHOT: /tmp/cdc-walkthrough.png
+        run: |
+          npm install --prefix /tmp/cdc-browser playwright@1.62.1
+          /tmp/cdc-browser/node_modules/.bin/playwright install --with-deps chromium
+          node tests/cdc_browser_smoke.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdc-submission-evidence
+          path: |
+            /tmp/cdc-baseline-reproduced/
+            /tmp/cdc-baseline-comparison.json
+            /tmp/cdc-isolated-v2/
+            /tmp/cdc-walkthrough.png
