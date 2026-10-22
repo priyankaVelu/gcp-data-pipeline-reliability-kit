@@ -1,0 +1,24 @@
+name: QueryGuard bundle planner
+on:
+  push:
+    branches: [feature/queryguard-bundle-planner, research/queryguard]
+  pull_request:
+    branches: [research/queryguard]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '${{ matrix.python }}'
+      - run: python -m unittest discover -s research/queryguard/tests -v
+      - run: python -m research.queryguard.bundle_v1.experiment --output /tmp/bundle-run
+      - run: python -m research.queryguard.bundle_v1.verify /tmp/bundle-run
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bundle-results-${{ matrix.python }}
+          path: /tmp/bundle-run
