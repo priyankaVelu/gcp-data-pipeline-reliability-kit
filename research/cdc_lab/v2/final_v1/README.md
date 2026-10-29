@@ -28,7 +28,8 @@ presenter time allocations, not a measured usability study. Browser test:
 installed-wheel environment variables. No remote frontend resources are needed.
 
 Production PDF build requires a full TeX installation, Libertine, Inconsolata and
-newtxmath (no Latin Modern fallback), plus pdfinfo/pdffonts/pdftotext. Obtain unmodified
+newtxmath (no Latin Modern fallback), plus pdfinfo/pdffonts/pdftotext and the generic TeX dependency `binhex.tex`
+(Debian/Ubuntu `texlive-plain-generic`). Obtain unmodified
 `acmart.dtx`, `acmart.ins`, `ACM-Reference-Format.bst` from upstream commit
 `10d6d082e522c4034022f38437019ba75589456b` (latest listed tag v2.20 at audit time),
 verify against the preserved `../submission/TEMPLATE_PROVENANCE.json`, and run
@@ -44,3 +45,18 @@ unembedded fonts, overfull boxes, and known placeholder strings. Author absence 
 reported as a blocker, not filled with fabricated metadata. No margins, spacing,
 font-size or bibliography compression is used to defeat the page limit. The final
 visual figure/citation review must be recorded separately from automated checks.
+
+The production CI job runs only for same-repository PRs (or explicit dispatch). Its
+contents-write permission is used solely to publish an unreferenced evidence Git
+blob when the normal artifact-download endpoint is blocked. `package_build.py`
+packages only generated manuscript build files and the build-driver log, never
+environment variables or credentials. The workflow does not update refs, merge,
+or submit anything. The resulting PDF/report are reviewed and committed to this
+preparation branch by the operator.
+
+The candidate uses acmart's documented `pbalance=true` option for last-page column
+balancing. The default `balance` path produced a persistent 1.292pt output-box
+overflow even after prose editing. This selects the class-supported balancing
+implementation; it does not change body size, margins or spacing. Five pdfLaTeX
+passes plus BibTeX allow its cross-run layout to converge. Earlier failed checks
+are recorded rather than represented as passing builds.

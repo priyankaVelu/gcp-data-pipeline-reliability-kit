@@ -62,7 +62,7 @@ claimed. Historical outcomes, including negative and neutral controls, remain in
 5. **Final owner editorial/visual approval.** Review actual production PDF after
    real authors are inserted; confirm contribution is sufficiently distinct and
    persuasive. Broader prior-art review and separately authored replication remain
-   methodological limitations. Optional video has not been recorded/hosted; do not
+   methodological limitations. Optional video has not been recorded/hosted; its absence is not a blocker if the live CFP confirms it is optional. Do not
    add a fictitious URL. Decide industry designation only if applicable.
 
 The source inventory in [PAPER1_OVERLAP.md](PAPER1_OVERLAP.md) also covers all 23 remote branch trees.

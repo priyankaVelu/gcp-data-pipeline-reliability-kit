@@ -26,7 +26,7 @@ def build(output,tex_directory):
         shutil.copy2(source/name,output/name)
     shutil.copytree(source/'figures',output/'figures')
     config=dict(os.environ,TEXINPUTS=str(tex_directory)+os.pathsep+os.environ.get('TEXINPUTS',''),BSTINPUTS=str(tex_directory)+os.pathsep+os.environ.get('BSTINPUTS',''))
-    commands=[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex'],['bibtex','manuscript']]+[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex']]*2
+    commands=[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex'],['bibtex','manuscript']]+[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex']]*4
     with (output/'build.log').open('w') as log:
         for command in commands:subprocess.run(command,cwd=output,env=config,stdout=log,stderr=subprocess.STDOUT,check=True)
     pdf=output/'manuscript.pdf'
@@ -43,9 +43,9 @@ def build(output,tex_directory):
         if line.strip() and not re.search(r'\byes\s+(yes|no)\s+(yes|no)\s+\d+\s+\d+\s*$',line):raise ValueError('unembedded font: '+line)
     if not all(x in fonts for x in ('LinLibertine','Inconsolata')):raise ValueError('ACM text/mono fonts not embedded')
     if re.search(r'TODO|TBD|placeholder|pending verification|Requirements unverified|Conference acronym|XXXX|Anon\.',text,re.I):raise ValueError('placeholder detected')
-    if r'\documentclass[sigconf,9pt]{acmart}' not in (output/'manuscript.tex').read_text():raise ValueError('wrong class declaration')
+    if r'\documentclass[sigconf,9pt,pbalance=true]{acmart}' not in (output/'manuscript.tex').read_text():raise ValueError('wrong class declaration')
     for name,body in (('pdfinfo.txt',info),('pdffonts.txt',fonts),('extracted.txt',text)):(output/name).write_text(body)
-    report=dict(status='production_font_candidate_not_submission_ready',pages=pages,page_size='US Letter 612x792pt',class_options='sigconf,9pt',
+    report=dict(status='production_font_candidate_not_submission_ready',pages=pages,page_size='US Letter 612x792pt',class_options='sigconf,9pt,pbalance=true',
         authors_present=False,blockers=['Verified owner author/affiliation/ORCID metadata missing; nonanonymous-track requirement unmet','Official CFP/template rules require current authoritative reconfirmation','Paper 1 submitted manuscript unavailable for overlap review','ACM reference-format front matter must be restored after verified author/publication metadata is supplied'],
         hashes={name:digest(output/name) for name in ('manuscript.tex','references.bib','manuscript.pdf')},class_sha256=digest(tex_directory/'acmart.cls'),
         warnings=[line for line in log.splitlines() if 'Warning' in line],commands=commands,
