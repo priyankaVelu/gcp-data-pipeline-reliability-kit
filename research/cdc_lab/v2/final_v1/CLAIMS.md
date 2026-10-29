@@ -3,12 +3,12 @@
 Scope: every quantitative statement and technical paragraph in `manuscript.tex`,
 against the immutable main snapshot `583b90bb5a8bc33b99e4812c4a29399d416beb19`.
 No new experiment outcome or novelty is asserted. `audit.py` fails on disagreement;
-`CLAIM_AUDIT.json` records its actual outcome and evidence hashes. The candidate is a
+`CLAIM_AUDIT_FINAL.json` records the final audit outcome (the earlier `CLAIM_AUDIT.json` is preserved) and evidence hashes. The candidate is a
 revision of V2; all earlier source, PDF and result files remain unchanged.
 
 | Claim / location | Evidence and independent check | Assessment / boundary |
 |---|---|---|
-| Abstract: stable state can be wrong; IDs do not order distinct changes | `cdc_interactive.scenario('stale_update')`, `Materializer.apply`; hand-calculated k0 v4 then v3 and independent maximum-version target in `audit.py` | Arrival and ID-only end at deleted v3; version guards retain live v4. General source-version validity is assumed. |
+| Abstract: stable state can be wrong; IDs do not order distinct changes | `cdc_interactive.scenario('stale_update')`, `Materializer.apply`; hand-calculated k0 v4 then v3 and independent maximum-version target in `audit.py` | Arrival and ID-only end at deleted v3; a second same-order pass is unchanged and still wrong (explicitly asserted for both policies). Version guards retain live v4. General source-version validity is assumed. |
 | Abstract / evidence: original 126 principal + 36 bounded rows reproduce | Original `cdc_lab/results/run-1`, V2 `baseline-reproduction-1`, `verify.compare`, fresh `/tmp` rerun | Every non-timing row field and original configuration/hash match. Same implementation, not separately authored replication. |
 | Architecture: schema and source ordering | `canonical`, `cdc_demo.validate`, `Materializer.apply` | Stable immutable event IDs, string payload, bool deletion and authoritative per-key integer versions; arbitrary source ordering inference not implemented. |
 | Architecture: oracle independent of processor transitions/validator | `cdc_interactive.oracle`; separately expressed `independent_target` in audit | Canonical maxima independently reduced for all 144 rows. Both assume the same specification. Oracle is not an external authority or proof. |

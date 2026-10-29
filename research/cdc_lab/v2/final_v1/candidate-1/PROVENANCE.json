@@ -1,0 +1,7 @@
+{
+  "artifact_endpoint_access": "blocked after retry; evidence retrieved through Git blob API",
+  "evidence_blob": "c4459e34033814e169eb35f5bd5f7ef62d7b6d4a",
+  "run_id": 40965293484,
+  "source_commit": "779a712ed4888396f83c011e42373d3ac9d46211",
+  "source_matches_working_candidate": true
+}

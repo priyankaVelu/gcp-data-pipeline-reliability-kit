@@ -8,11 +8,24 @@ performed. Competitive acceptance is not established by these checks.
 ## Candidate and audit
 
 - [Revised manuscript](manuscript.tex), [bibliography](references.bib),
-  [claim-by-claim audit](CLAIMS.md), [machine audit](CLAIM_AUDIT.json).
+  [claim-by-claim audit](CLAIMS.md), [final machine audit](CLAIM_AUDIT_FINAL.json).
 - [Reproducibility instructions](README.md), original tested
   [five-minute walkthrough](../WALKTHROUGH.md).
-- Production-font PDF and build report: pending the new production CI build; this
-  report will be updated with actual paths, page count and font/visual checks.
+- [Final preparation candidate PDF](candidate-1/manuscript.pdf): **3 pages including
+  references, US Letter, ACM sigconf 9pt**, unmodified upstream class v2.20 with
+  embedded Libertine, Inconsolata and math fonts. [Build report](candidate-1/BUILD_REPORT.json),
+  [font inventory](candidate-1/pdffonts.txt), [visual review](VISUAL_REVIEW.json),
+  [hash manifest](candidate-1/SHA256.json). All three pages rendered and inspected;
+  both vector figures are readable. No unresolved citations or placeholder strings.
+  Source and bibliography hashes exactly match this candidate. The PDF has no
+  author block and remains unsuitable for a nonanonymous-track upload.
+- **Known diagnostics retained:** a 1.292pt output-box warning remains under both
+  supported balancing methods; no clipped/overlapping text was observed and all
+  extracted words fit the Letter page. It remains a final layout-review item,
+  not a claimed zero-warning build. The suppressed ACM reference-format block
+  also produces a class warning and must be restored with verified metadata.
+  See [failed and successful build history](evidence/BUILD_ATTEMPTS.json). No failed
+  build or blocked official-page fetch is represented as passing.
 - All main-tree historical files are SHA-256 protected by `PRESERVATION.json`.
   Earlier V2 source/PDF/build reports are preserved, not presented as current output.
 
@@ -27,11 +40,16 @@ installed setuptools 84.0.0; no failed/absent isolated build is counted as passi
 
 Fresh original runner execution produced 126 principal and 36 bounded rows, all
 non-timing fields matching historical run-1. Fresh V2 execution produced 144 principal
-and 72 expiry rows in fresh directories, retained under `evidence/`, preserving older committed results. The new audit independently
+and 72 expiry rows in fresh directories, retained under `evidence/`, preserving older committed results. The final audit independently
 reduces canonical maxima, replays all 144 retained principal rows, reexecutes all 72
-expiry rows and checks every technical field/digest. Correct/incorrect/rejected:
+expiry rows and checks every technical field/digest. It also asserts the title counterexample: a second same-order pass leaves arrival and ID-only replay stable but incorrect. Correct/incorrect/rejected:
 arrival 24/12/12, ID-only 30/6/12, version-aware 36/0/12. No new performance result is
 claimed. Historical outcomes, including negative and neutral controls, remain intact.
+
+The production build passed its page/font/citation/placeholder/visible-bounds checks in
+[run 40965293484](https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40965293484).
+Other test/demo workflows passed on that source revision. The PR records final-head
+CI conclusions after the documentation/evidence commit.
 
 ## Exact blockers requiring resolution before upload
 
@@ -77,6 +95,6 @@ memory is bounded in expiry tests. Preflight ambiguity rejection is not online
 conflict detection. Ordered seeds repeat equivalent workloads, not independent
 statistical samples. Whole-state equality does not count external side effects.
 
-Paper 1 source missing; all available Paper 1-related V4/V5 artifacts untouched.
+Paper 1 source missing; Paper 3 and all other research branches were not modified.  all available Paper 1-related V4/V5 artifacts untouched.
 Other research (including QueryGuard) lives on other branches and is untouched. Earlier Paper 2 papers,
 figures, protocols and results are protected. PR targets main for human review only.

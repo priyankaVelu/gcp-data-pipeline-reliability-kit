@@ -1,0 +1,86 @@
+[
+  {
+    "commit": "779a712ed4888396f83c011e42373d3ac9d46211",
+    "conclusion": "success",
+    "note": "Passed explicit production-font/page/citation/placeholder/visible-bounds checks; 1.292pt vertical-box warning and missing-author/front-matter blockers retained.",
+    "run_id": 40965293484,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40965293484"
+  },
+  {
+    "commit": "ced8261d3c3a647933fbdeb87d371e060eec05ef",
+    "conclusion": "failure",
+    "run_id": 40964834223,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40964834223",
+    "verified_failure_reason": "pbalance option also retained the 1.292pt output-box diagnostic; ordinary class options restored; actual ink bounds checked explicitly instead of claiming zero warnings."
+  },
+  {
+    "commit": "79235e4a267e84117576d16779a020f06aa163c5",
+    "conclusion": "failure",
+    "run_id": 40964428287,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40964428287",
+    "verified_failure_reason": "persistent 1.292pt output-box overflow with default balance; switched to class pbalance option"
+  },
+  {
+    "commit": "2549644ad3f8ca02a08d4b608276221842f64e32",
+    "conclusion": "failure",
+    "run_id": 40963735936,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40963735936",
+    "verified_failure_reason": "persistent 1.292pt output-box overflow with default balance; switched to class pbalance option"
+  },
+  {
+    "commit": "66c16f93110de22e8434feda0d59d6283e9b1659",
+    "conclusion": "failure",
+    "run_id": 40963421845,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40963421845",
+    "verified_failure_reason": "production-font horizontal column overflows; prose revised without size/margin changes"
+  },
+  {
+    "commit": "38815707d97c4d89f4172ae0ae0e226dd47b69e6",
+    "conclusion": "failure",
+    "run_id": 40963328822,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40963328822"
+  },
+  {
+    "commit": "15fe2cda9082fa36f204686bb5848cce50f414f9",
+    "conclusion": "failure",
+    "run_id": 40963014165,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40963014165",
+    "verified_failure_reason": "production-font horizontal column overflows; prose revised without size/margin changes"
+  },
+  {
+    "commit": "47dc8c412e84888525c81b5139efb7fc92244253",
+    "conclusion": "failure",
+    "run_id": 40962841335,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40962841335"
+  },
+  {
+    "commit": "8b6b60e095e6ff1fe9a5754d59fcc6908d581806",
+    "conclusion": "failure",
+    "run_id": 40962700873,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40962700873",
+    "verified_failure_reason": "newtxmath input binhex.tex missing; added texlive-plain-generic"
+  },
+  {
+    "commit": "fb65d42cce965616a5277d43a965eb5fb6eb956e",
+    "conclusion": "failure",
+    "run_id": 40960995682,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40960995682"
+  },
+  {
+    "commit": "ea13d1284c6be3debcf42e3e4acf72dbcec3667a",
+    "conclusion": "failure",
+    "run_id": 40960976511,
+    "status": "completed",
+    "url": "https://github.com/priyankaVelu/gcp-data-pipeline-reliability-kit/actions/runs/40960976511"
+  }
+]

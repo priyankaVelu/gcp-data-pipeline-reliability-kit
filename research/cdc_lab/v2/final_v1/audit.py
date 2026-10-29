@@ -81,10 +81,18 @@ def audit():
     for policy,correct in (('arrival',False),('id_only',False),('version',True)):
         x=m.evaluate(name='stale_update',strategy=policy,keys=1)
         require(x['state_correct']==correct,'visible counterexample')
+    base,events=m.scenario('stale_update',1,7)
+    target=independent_target(base)
+    for policy in ('arrival','id_only'):
+        processor=m.Materializer(policy,None)
+        for event in events:processor.apply(event)
+        first=json.loads(json.dumps(processor.state))
+        for event in events:processor.apply(event)
+        require(processor.state==first and processor.state!=target,'stable-but-incorrect title counterexample')
     recovery=m.evaluate(name='post_recovery_redelivery',strategy='version',keys=3,checkpoint=4,interruption=8)
     require(recovery['lost_attempts']==recovery['replayed_lost_attempts']==4 and recovery['redelivery_state_unchanged'],'walkthrough recovery counts')
     return dict(status='passed',protected_files=len(protected['files']),baseline_comparison=comparison['counts'],principal_rows=144,expiry_rows=72,counts=counts,
-        independently_specified_canonical_targets=144,replayed_principal_rows=144,reexecuted_expiry_rows=72,
+        stable_but_incorrect_hand_checked_policies=2,independently_specified_canonical_targets=144,replayed_principal_rows=144,reexecuted_expiry_rows=72,
         limitations=['Specification assumes authoritative integer versions','Reexecution of existing implementation, not independent implementation replication','Retained runtimes are historical observations; no performance comparison'],
         evidence_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (old/'results.json',repeated/'results.json',ROOT/'research/cdc_lab/v2/results/isolated-1/results.json')})
 

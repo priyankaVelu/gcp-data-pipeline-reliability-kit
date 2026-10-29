@@ -4,7 +4,7 @@ This is a new candidate revision of `../submission/manuscript.tex` from main com
 `583b90bb5a8bc33b99e4812c4a29399d416beb19`. Earlier manuscripts, PDFs, protocols,
 results and Papers 1/3 are unchanged. Nothing is submitted or merged.
 
-Start with [READINESS.md](READINESS.md), [CLAIMS.md](CLAIMS.md), and
+The [candidate PDF](candidate-1/manuscript.pdf) is 3 pages including references; it is not submission-ready. Start with [READINESS.md](READINESS.md), [CLAIMS.md](CLAIMS.md), and
 [LITERATURE.md](LITERATURE.md). Owner author/affiliation/ORCID metadata and the actual
 submitted Paper 1 source are unavailable; no identities or affiliations are invented.
 A candidate with no author block is not ready for a nonanonymous submission.
