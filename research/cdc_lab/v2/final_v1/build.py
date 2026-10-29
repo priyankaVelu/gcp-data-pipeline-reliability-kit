@@ -46,9 +46,11 @@ def build(output,tex_directory):
     if r'\documentclass[sigconf,9pt]{acmart}' not in (output/'manuscript.tex').read_text():raise ValueError('wrong class declaration')
     for name,body in (('pdfinfo.txt',info),('pdffonts.txt',fonts),('extracted.txt',text)):(output/name).write_text(body)
     report=dict(status='production_font_candidate_not_submission_ready',pages=pages,page_size='US Letter 612x792pt',class_options='sigconf,9pt',
-        authors_present=False,blockers=['Verified owner author/affiliation/ORCID metadata missing; nonanonymous-track requirement unmet','Official CFP/template rules require current authoritative reconfirmation','Paper 1 submitted manuscript unavailable for overlap review'],
+        authors_present=False,blockers=['Verified owner author/affiliation/ORCID metadata missing; nonanonymous-track requirement unmet','Official CFP/template rules require current authoritative reconfirmation','Paper 1 submitted manuscript unavailable for overlap review','ACM reference-format front matter must be restored after verified author/publication metadata is supplied'],
         hashes={name:digest(output/name) for name in ('manuscript.tex','references.bib','manuscript.pdf')},class_sha256=digest(tex_directory/'acmart.cls'),
-        warnings=[line for line in log.splitlines() if 'Warning' in line],commands=commands)
+        warnings=[line for line in log.splitlines() if 'Warning' in line],commands=commands,
+        latex_version=subprocess.check_output(['pdflatex','--version'],text=True).splitlines()[0],
+        font_packages={name:subprocess.check_output(['kpsewhich',name],text=True).strip() for name in ('libertine.sty','zi4.sty','newtxmath.sty')})
     (output/'BUILD_REPORT.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
     print(json.dumps(report))
 
