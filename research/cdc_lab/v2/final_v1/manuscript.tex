@@ -215,13 +215,12 @@ processing. A finite ID ledger is not a bound on total state. Claims are limited
 retained deterministic workloads; independent implementation replication and a
 broader prior-art review remain outstanding.
 
-The artifact provides commands for unit tests, frozen V4/V5 validation, and the V2
-runner with fresh output paths. Start the interface using Python's \texttt{-m}
-option with module \texttt{pipeline\_reliability.}\allowbreak\texttt{cdc\_interactive}.
-Retained artifacts record full source commit, dirty status, Python and platform, seeds,
-configurations, all samples, and hashes of the workload, source and protocol. The retained versioned evidence, a five-minute walkthrough, and fresh-output commands
-are available in the public artifact~\cite{artifact}. Logical checkpoint behavior
-is not durable crash recovery; preflight rejection is not online detection.
+The public artifact~\cite{artifact} provides unit tests, frozen V4/V5 validation,
+fresh-output commands, retained evidence and the five-minute walkthrough. Start the
+interface using Python's \texttt{-m} option with module
+\texttt{pipeline\_reliability.}\allowbreak\texttt{cdc\_interactive}.
+Artifacts retain the source commit, dirty status, software environment, seeds,
+configuration, timing samples and hashes.
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
 \end{document}
