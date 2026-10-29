@@ -1,0 +1,3 @@
+Experiment Suite v4 pre-result tests: PASS
+Validated: frozen matrix constants, independent oracle, deterministic injection, causal fault counts,
+four principal strategies, five matched control conditions, metric bounds, and reproducibility metadata.

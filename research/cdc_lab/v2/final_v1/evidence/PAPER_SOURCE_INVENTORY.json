@@ -1,0 +1,184 @@
+[
+  {
+    "branch": "docs/zenodo-doi",
+    "commit": "02a3f21434c30d5bfa71dbb8f016cf0ed9b6402c",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "feature/pipeline-reliability-cli",
+    "commit": "885c8599afc9cc57078f568b5ebbf069d68152cf",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "feature/queryguard-bundle-planner",
+    "commit": "6b1d85178485a1989186ea85d48bd677c4249fec",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex",
+      "research/cdc_lab/v2/submission/manuscript-preview.pdf",
+      "research/cdc_lab/v2/submission/manuscript.tex",
+      "research/cdc_lab/v2/submission/references.bib"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "feature/queryguard-overlap-planner",
+    "commit": "992e10571f24dc60df5f5025bccd78d7fd628fc3",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex",
+      "research/cdc_lab/v2/submission/manuscript-preview.pdf",
+      "research/cdc_lab/v2/submission/manuscript.tex",
+      "research/cdc_lab/v2/submission/references.bib"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "feature/sigmod2027-cdc-replay-demo",
+    "commit": "51c217df7d4e4a54545d6ac8039afc5bc8fa2f24",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "main",
+    "commit": "583b90bb5a8bc33b99e4812c4a29399d416beb19",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex",
+      "research/cdc_lab/v2/submission/manuscript-preview.pdf",
+      "research/cdc_lab/v2/submission/manuscript.tex",
+      "research/cdc_lab/v2/submission/references.bib"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "research/dsn2027-validity-fixes",
+    "commit": "d146752797ebc0ddcd33a500bd9e3b786e7e75f8",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/experiment-suite-v4",
+    "commit": "4980ac95c547c4e6f048b086a59f2d276e98c592",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/experiment-suite-v5",
+    "commit": "a16a23da2bd77f9f0fff058cec59b283283e8d03",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/freeze-v4-protocol",
+    "commit": "35396d79d568796d5219558f246faf079ba2fafb",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/governance-recovery-contracts-v1",
+    "commit": "b37ea529ede0f24d7c722ed5640c8242b0e1da53",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "research/paper2-cdc-replay-lab",
+    "commit": "5f8942b94221b0ddc8752e1cab7e8aa99c95304d",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "research/paper2-sigmod-submission",
+    "commit": "268d7ee82560e15e24acd6c6647bd3f99353fce6",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex",
+      "research/cdc_lab/v2/submission/manuscript-preview.pdf",
+      "research/cdc_lab/v2/submission/manuscript.tex",
+      "research/cdc_lab/v2/submission/references.bib"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "research/paper-experiment-suite-v1",
+    "commit": "1be8d72c77cf44591d719e9dc0fc6bcc16ec17e4",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/paper-experiment-suite-v2",
+    "commit": "31f593aa335c54b060c7750f313cc57c9d64bd25",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/paper-experiment-suite-v3",
+    "commit": "61e56bb6f6520e9e6f84f75b9bdd493dc7da2fec",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/preserve-v2-results",
+    "commit": "d97c4716eb2e56efbd31434f91023436a55cd3c1",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/preserve-v3-results",
+    "commit": "68e3b5da7792b89f62131f575c8eabe721059de0",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "research/queryguard",
+    "commit": "191060e4b57d65c55d959c4e15ea52671ec1e71b",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex",
+      "research/cdc_lab/v2/submission/manuscript-preview.pdf",
+      "research/cdc_lab/v2/submission/manuscript.tex",
+      "research/cdc_lab/v2/submission/references.bib"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "research-v0.1",
+    "commit": "2a906566bb1265f3bddda27721ba7cba1116174b",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "setup/day-1-foundation",
+    "commit": "4d6dc50f7c3c61046ef617fc2259e6a2c21d0ce7",
+    "paper_sources": [],
+    "truncated": false
+  },
+  {
+    "branch": "submission/paper2-final-preparation",
+    "commit": "15fe2cda9082fa36f204686bb5848cce50f414f9",
+    "paper_sources": [
+      "research/cdc_lab/manuscript.pdf",
+      "research/cdc_lab/manuscript.tex",
+      "research/cdc_lab/v2/final_v1/manuscript.tex",
+      "research/cdc_lab/v2/final_v1/references.bib",
+      "research/cdc_lab/v2/submission/manuscript-preview.pdf",
+      "research/cdc_lab/v2/submission/manuscript.tex",
+      "research/cdc_lab/v2/submission/references.bib"
+    ],
+    "truncated": false
+  },
+  {
+    "branch": "v0.1-implementation",
+    "commit": "49b6f5fa0e0d71de380ee6c13d3ff3d0316f5399",
+    "paper_sources": [],
+    "truncated": false
+  }
+]

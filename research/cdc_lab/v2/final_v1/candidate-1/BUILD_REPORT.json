@@ -1,0 +1,56 @@
+{
+  "authors_present": false,
+  "blockers": [
+    "Verified owner author/affiliation/ORCID metadata missing; nonanonymous-track requirement unmet",
+    "Official CFP/template rules require current authoritative reconfirmation",
+    "Paper 1 submitted manuscript unavailable for overlap review",
+    "ACM reference-format front matter must be restored after verified author/publication metadata is supplied"
+  ],
+  "class_options": "sigconf,9pt",
+  "class_sha256": "784c4f2fb07a70d8a797ee9d1c63f441c10fbd2f915c9c615d28cda35c0b742a",
+  "commands": [
+    [
+      "pdflatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "manuscript.tex"
+    ],
+    [
+      "bibtex",
+      "manuscript"
+    ],
+    [
+      "pdflatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "manuscript.tex"
+    ],
+    [
+      "pdflatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "manuscript.tex"
+    ]
+  ],
+  "font_packages": {
+    "libertine.sty": "/usr/share/texlive/texmf-dist/tex/latex/libertine/libertine.sty",
+    "newtxmath.sty": "/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxmath.sty",
+    "zi4.sty": "/usr/share/texlive/texmf-dist/tex/latex/inconsolata/zi4.sty"
+  },
+  "hashes": {
+    "manuscript.pdf": "430a133a7f32499bca622af55d6d4c89b7d4f8571f2e81b9067d4f2c09a55814",
+    "manuscript.tex": "994f1d45156d8827e587453c4cb5d08dc1055ffd253b5869620c7f0bb35e15cb",
+    "references.bib": "88866dc94a82301eae62e07ae005966f057eba49d887b6797dc7d2cf71bfa6b7"
+  },
+  "latex_version": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian)",
+  "layout_warnings": [
+    "Overfull \\vbox (1.292pt too high) has occurred while \\output is active []"
+  ],
+  "page_size": "US Letter 612x792pt",
+  "pages": 3,
+  "status": "production_font_candidate_not_submission_ready",
+  "visible_bounds": "all extracted words within page; figures require visual review",
+  "warnings": [
+    "Class acmart Warning: ACM reference format is mandatory "
+  ]
+}

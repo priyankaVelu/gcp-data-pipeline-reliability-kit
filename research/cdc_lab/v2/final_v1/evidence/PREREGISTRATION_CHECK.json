@@ -1,0 +1,29 @@
+{
+  "commits": [
+    {
+      "committed_at": "2026-10-13T16:05:48Z",
+      "message": "Preregister isolated CDC V2 controls and snapshot protected baseline",
+      "paths": [
+        "research/cdc_lab/v2/BASELINE_INTEGRITY.json",
+        "research/cdc_lab/v2/PROTOCOL.md"
+      ],
+      "sha": "fd43726d9dc800a5cb7d653e8d6a23f7b0f0a7d6"
+    },
+    {
+      "committed_at": "2026-10-13T16:12:10Z",
+      "message": "Add isolated CDC V2 experiments and standard-library interactive replay lab",
+      "paths": [
+        "pipeline_reliability/cdc_interactive.py",
+        "research/cdc_lab/v2/run.py",
+        "research/cdc_lab/v2/verify.py",
+        "tests/cdc_browser_smoke.cjs",
+        "tests/test_cdc_interactive.py",
+        "tests/test_cdc_v2_artifacts.py"
+      ],
+      "sha": "b4c41ee513de7d973b51acb281067a8909a14d72"
+    }
+  ],
+  "comparison_status": "ahead",
+  "note": "Repository preregistration only; does not prove external registration or independent authorship.",
+  "protocol_ancestor_of_measured_source": true
+}

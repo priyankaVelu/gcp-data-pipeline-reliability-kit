@@ -1,0 +1,35 @@
+{
+  "all_three_pages_rendered_and_inspected": true,
+  "citations": "Seven bibliography entries and all in-text citations resolved; no undefined-citation log warnings",
+  "figures": "Architecture and preset-output figures readable; vector text uses document size rather than shrunken screenshot",
+  "font_embedding": "All fonts embedded Type 1; Libertine, Inconsolata, LibertineMathMI/txsys present",
+  "observed_clipping_or_text_overlap": false,
+  "owner_metadata": "No author/affiliation/ORCID supplied or invented; must add before nonanonymous submission",
+  "page_dimensions_points": [
+    [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ]
+  ],
+  "pages": 3,
+  "pdf_sha256": "430a133a7f32499bca622af55d6d4c89b7d4f8571f2e81b9067d4f2c09a55814",
+  "readiness": "not_submission_ready",
+  "remaining_warnings": [
+    "1.292pt output-box warning retained; no out-of-page extracted words or visible clipping observed",
+    "ACM reference-format front matter disabled pending verified metadata; class warning retained"
+  ]
+}

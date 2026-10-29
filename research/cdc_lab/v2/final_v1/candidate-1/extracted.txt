@@ -1,0 +1,157 @@
+ CDC Replay Correctness Lab: Making Stable but Incorrect State
+                           Visible
+Abstract                                                                      Canonical synthetic history −→ independent batch oracle
+Change-data capture consumers can produce a stable but incor-                         ↓ scenario / ordering / failure construction
+rect materialization: identity deduplication does not order distinct                 Arrival | ID-only | version-aware processors
+changes, and finite identity memory may hide conflicting historical
+                                                                                        ↓ logical checkpoint, restore, redelivery
+payloads without changing the latest state. CDC Replay Correct-
+ness Lab is a local, interactive demonstration of these distinctions.           Per-event trace + counters + actual/oracle comparison
+Reviewers select ordering, replay policy, checkpoint and interrup-
+tion boundaries and ID retention, inspect event-by-event decisions,       Figure 1: The canonical specification and replay transitions
+and compare actual state with an independent canonical oracle.            are separate. The interface shares the tested model with the
+A guaranteed stale-delete preset reproduces baseline failure with-        V2 experiment runner.
+out searching seeds. Independent execution of the original artifact
+reproduced its 126 principal and 36 bounded observations. New
+isolated controls show that all three policies pass duplicate-only        source-specific ordering contracts: Debezium’s PostgreSQL docu-
+and ordered delete/reinsert workloads; an ID-only policy still fails      mentation describes LSN-bearing change events and offset-based
+the stale-delete case. A separate probe-order study exposes why           restart [5]. We neither derive comparable versions from arbitrary
+retention-dependent conflict detection cannot be inferred from            CDC records nor implement that connector.
+final-state equality. The contribution is an inspectable, reproducible
+educational and diagnostic artifact, not a new CDC algorithm or           2    Architecture and correctness model
+an exactly-once guarantee.                                                The system has a Python HTTP server from the standard library,
+                                                                          embedded HTML and JavaScript, a replay model, two research run-
+CCS Concepts                                                              ners and artifact validators. It needs no external service or front-end
+• Software and its engineering → Software testing and debug-              download. The installed wheel serves the same interface from out-
+ging; • Information systems → Data replication tools.                     side the checkout. Requests describe a bounded synthetic scenario;
+                                                                          they do not upload arbitrary client data. State is local to one request.
+Keywords                                                                      The independently implemented oracle groups the canonical
+                                                                          history by key and selects the maximum version. Its identity and
+change-data capture, replay, correctness oracle, interactive demon-
+                                                                          key/version ambiguity checks are separately implemented; it calls
+stration
+                                                                          no materializer transitions or shared processor conflict validator. It
+                                                                          is computed before injected delivery is processed. Hand-authored
+1    Problem and demonstration contribution                               tests assert stale updates, deletion/reinsertion and ambiguous iden-
+A downstream materializer can receive a historical deletion after a       tities/versions. This is a test specification, not an external database
+newer reinsertion. Keeping only unique event IDs does not prevent         authority or formal proof.
+this stale overwrite when the IDs are distinct. Moreover, a second            Arrival-order replay overwrites on each event. ID-only replay
+replay may leave an already incorrect state unchanged. A demon-           suppresses remembered IDs but otherwise overwrites. Version-
+stration that reports only duplicate counts or redelivery stability       aware replay also refuses lower-version state writes and conflicting
+can therefore conceal the failure it is supposed to explain.              equal-version values. Principal ID-based policies use an unlimited
+   The lab turns these counterexamples into an audience-controlled        ID ledger; arrival replay keeps none. A shared preflight validator
+comparison of three simple policies. It separates final-state equality,   rejects conflicting input before any of the three policies executes;
+duplicate recognition, conflict detection, and recovery attempts. A       that rejection must not be called online conflict detection.
+reviewer can switch from whole-input validation to online pro-                At checkpoint offset 𝑐, logical state and ID memory are JSON-
+cessing and expire identities while retaining versioned tombstones.       serialized. Execution continues to interruption 𝑖, discards later at-
+This reveals both containment and missing detection rather than           tempts, restores the earlier snapshot and replays from 𝑐. These
+displaying only favorable outcomes. The artifact makes established        are simulated logical checkpoints: no disk write, fsync, transac-
+semantics observable; it introduces no new fault-tolerance algo-          tional source/sink coupling or real crash is provided. Distributed
+rithm and reports no user-study or production result.                     consistent cuts are a substantially stronger problem [4].
+   The event contract assumes immutable identity, an authoritative            For completed recovery runs, the trace marks events attempted
+comparable per-key integer version, a string payload and a deletion       before interruption that are discarded when the snapshot is restored.
+flag. Higher versions determine the intended state; a latest deleted      Monotonicity counters separate attempted writes, committed-prefix
+record remains a tombstone until superseded. Real sources require         writes and recovered writes. Restore can lower a visible version
+                                                                          because an earlier snapshot is reinstated; it is not counted as a
+SIGMOD 2027 Demonstrations,                                               stale materialization write. A completed run’s correctness requires
+2027.                                                                     whole-state oracle equality, independently of its redelivery stability.
+SIGMOD 2027 Demonstrations, ,
+
+
+    Stale-delete preset: one key, native order                              Table 1: V2 outcomes per policy: 36 completed and 12
+                                                                            preflight-rejected inputs.
+    b0:v4: live v4 −→ b0:v3: delete v3
+     Policy           Actual      Oracle
+     Arrival          deleted v3 live v4                                             Policy            Correct    Incorrect   Rejected
+     ID-only          deleted v3 live v4                                             Arrival                24           12         12
+     Version-aware live v4        live v4                                            ID-only                30            6         12
+    Inspect: strategy switch; wrong-key reason; trace position;                      Version-aware          36            0         12
+    before/after state; stale-write decision.
+
+Figure 2: Readable typeset view of verified preset outputs,
+not a browser screenshot. The working interface exposes
+these states and interactions; the artifact retains the full
+Chromium screenshot. Distinct IDs do not protect against
+stale deletion.                                                             4   Evidence and isolated controls
+                                                                            The protocol was repository-committed before implementation and
+                                                                            measurements. A new execution of the unchanged original runner
+                                                                            reproduced all non-timing fields of its 126 principal and 36 bounded
+                                                                            observations. Artifact validation checked original and new SHA-256
+3    Live demonstration experience                                          manifests, CSV/JSON field parity, source and configuration hashes
+The interface exposes nine scenarios, policy selection, native, re-         and row counts. This is independent execution, not replication
+versed, seeded or version-based ordering, logical checkpoint and            by a separately authored implementation. Timing samples were
+interruption offsets, and finite or unlimited ID capacity. Side-by-side     intentionally not required to match.
+states and wrong-key explanations identify a missing key, stale ver-            Original duplicate and delete/reinsert conditions also shuffled
+sion, unexpected version, or payload/tombstone mismatch. Trace              input; they were compound workloads. V2 adds truly isolated con-
+rows show phase, source offset, event identity, applied, duplicate,         trols and records a new 144-row matrix: 8/64 keys, three seeds,
+stale or conflict decisions and ledger size. A slider reveals state after   eight conditions, three policies, five fresh timed executions. Some
+the selected transition. Invalid controls produce an explicit error;        ordered conditions do not vary with seed; rows are not indepen-
+rejected or conflict-stopped runs have no completed correctness             dent statistical samples. Conflicting-ID and same-version conditions
+verdict.                                                                    yield 12 rejected inputs per policy. The remaining 36 completed
+   The five-minute walkthrough follows five interactions:                   observations per policy are summarized below.
+                                                                                All policies pass all six configurations each of ordered live in-
+    (1) Click the stale-delete preset: one key receives live v4 under       put, duplicate-only, ordered delete/reinsert and ordered check-
+        one ID and deleted v3 under another. Arrival-order replay           point recovery. Thus neither duplicates alone nor an ordered dele-
+        visibly fails within the automated one-minute check. This           tion/reinsertion sequence establishes an advantage for version
+        case is deterministic and requires no seed search.                  guards in this final-state model. Arrival and ID-only fail all six
+    (2) Select ID-only, then version-aware. ID-only remains wrong;          stale-delete configurations. Reverse post-recovery redelivery addi-
+        version-aware keeps live v4. Inspect the stale decision and         tionally makes arrival replay wrong; remembered identities contain
+        before/after state with the trace controls.                         that case for ID-only.
+    (3) Choose recovery/redelivery, three keys, checkpoint 4 and                A separate 72-row online matrix crosses policy, capacities of
+        interruption 8. Inspect four discarded attempts and four re-        0, 4, 16 or unlimited, three recorded seeds and two probe orders.
+        played lost attempts; compare final state and the distinct          State and tombstones remain unbounded. In conflict-first, version-
+        redelivery-stability indicator.                                     aware replay detects the expired-ID conflict only with unlimited
+    (4) Choose ledger expiry, 16 keys, online validation and capacity       memory. In exact-then-conflict, capacities 4/16 detect it after exact
+        4. Latest state matches the oracle, yet an injected conflicting     stale redelivery reinserts the ID; capacity 0 still misses it. Each
+        stale ID payload is not detected; the interface explicitly warns    configuration is repeated over three seeds, but its ordered bootstrap
+        about this distinction.                                             is identical. A version guard can preserve latest state while losing
+    (5) Clear the capacity for unlimited retention. The same con-           historical-payload consistency checks.
+        flict is detected and processing stops. Switch to whole-input           Five timing samples and per-row medians are retained for every
+        validation to see rejection before replay.                          observation. Principal run timing includes validation, snapshot
+                                                                            copies, serialization and event traces; expiry timing covers the
+The allocation is a presenter script, not an observed five-minute           materializer bootstrap and probes, without traces or checkpointing.
+usability study. HTTP integration tests cover preflight rejection.          Both exclude data construction, oracle/scoring and output I/O. Trace
+Real Chromium automation executes the preset, policy switches,              copying changes measured work, so V2 timings are not used as
+trace stepping, recovery and finite and unlimited ledger interactions       speedups over the original runner. One host, small synthetic streams
+with no JavaScript errors. The browser uses the built wheel outside         and early rejection preclude throughput, cloud-cost or production
+the repository.                                                             conclusions.
+CDC Replay Correctness Lab: Making Stable but Incorrect State Visible                                                      SIGMOD 2027 Demonstrations, ,
+
+
+5    Related work, limits and reproducibility                           References
+MillWheel studies persistent state and fault-tolerant streaming [1];    [1] Tyler Akidau, Alex Balikov, Kaya Bekiroglu, Slava Chernyak, Josh Haberman,
+                                                                            Reuven Lax, Sam McVeety, Daniel Mills, Paul Nordstrom, and Sam Whittle. 2013.
+the Dataflow Model treats correctness, latency and cost for un-             MillWheel: Fault-Tolerant Stream Processing at Internet Scale. Proceedings of
+ordered input [2]. This lab does not reproduce either system. Its           the VLDB Endowment 6, 11 (2013), 1033–1044. https://www.vldb.org/pvldb/vol6/
+                                                                            p1033-akidau.pdf
+reference-specification approach sits within established model-         [2] Tyler Akidau, Robert Bradshaw, Craig Chambers, Slava Chernyak, Rafael J.
+based testing [7]; it does not benchmark against that taxonomy              Fernandez-Moctezuma, Reuven Lax, Sam McVeety, Daniel Mills, Frances Perry,
+or introduce a new test-oracle method. Interactive algorithm vi-            Eric Schmidt, and Sam Whittle. 2015. The Dataflow Model: A Practical Approach
+                                                                            to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-
+sualizations such as RaftScope [6] predate this work. Our specific          Order Data Processing. Proceedings of the VLDB Endowment 8, 12 (2015), 1792–1803.
+demonstration joins CDC stale-delete counterexamples, attempted             doi:10.14778/2824032.2824076
+and recovered trace evidence and probe-order-dependent ID ex-           [3] CDC Replay Correctness Lab repository contributors. [n. d.]. CDC Replay
+                                                                            Correctness Lab: Reproducible Artifact. https://github.com/priyankaVelu/gcp-
+piry, rather than claiming invention of visualization, idempotency,         data-pipeline-reliability-kit/tree/583b90bb5a8bc33b99e4812c4a29399d416beb19/
+versions or checkpoints.                                                    research/cdc_lab/v2 Immutable main snapshot; README, protocol, results, and
+                                                                            walkthrough. Accessed 2026-10-29.
+   The model has no distributed scheduler, external CDC connector,      [4] K. Mani Chandy and Leslie Lamport. 1985. Distributed Snapshots: Determining
+durable sink, concurrency, source epochs or tombstone garbage               Global States of Distributed Systems. ACM Transactions on Computer Systems 3, 1
+collection. Stable IDs and authoritative versions are assumptions.          (1985), 63–75. doi:10.1145/214451.214456
+                                                                        [5] Debezium contributors. [n. d.].                  Debezium Connector for
+Equal versions cannot resolve ambiguous data. Final-state equality          PostgreSQL.                Primary     connector    documentation,       revision
+does not measure external side-effect multiplicity or imply exactly-        d9e8eeb71f617586ac2cff41ebef2ca7f4ee308e.         https://github.com/debezium/
+once processing. A finite ID ledger is not a bound on total state.          debezium/blob/d9e8eeb71f617586ac2cff41ebef2ca7f4ee308e/documentation/
+                                                                            modules/ROOT/pages/connectors/postgresql.adoc Accessed 2026-10-13.
+Claims are limited to retained deterministic workloads; independent     [6] RaftScope contributors. [n. d.]. RaftScope: Raft Visualization. Primary project
+implementation replication and a broader prior-art review remain            repository, revision 5b0c10ab51f873721895e7470b49e04c94bf826f. https://github.
+                                                                            com/ongardie/raftscope/tree/5b0c10ab51f873721895e7470b49e04c94bf826f Ac-
+outstanding.                                                                cessed 2026-10-13.
+   The public artifact [3] provides unit tests, frozen V4/V5 valida-    [7] Mark Utting, Alexander Pretschner, and Bruno Legeard. 2012. A Taxonomy of
+tion, fresh-output commands, retained evidence and the five-minute          Model-Based Testing Approaches. Software Testing, Verification and Reliability 22,
+                                                                            5 (2012), 297–312. doi:10.1002/stvr.456
+walkthrough. Start the interface using Python’s -m option with
+module pipeline_reliability.cdc_interactive. Artifacts re-
+tain the source commit, dirty status, software environment, seeds,
+configuration, timing samples and hashes.
+

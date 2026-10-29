@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-10-29T21:47:28.842658+00:00",
+  "attempts": [
+    {
+      "key": "cfp",
+      "url": "https://2027.sigmod.org/calls_sigmod_demos.shtml",
+      "status": "access_failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "key": "dates",
+      "url": "https://2027.sigmod.org/calls_papers_important_dates.shtml",
+      "status": "access_failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "key": "acm_template",
+      "url": "https://www.acm.org/publications/proceedings-template",
+      "status": "access_failed",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "key": "snapshots",
+      "url": "https://api.crossref.org/works/10.1145/214451.214456",
+      "status": 200,
+      "sha256": "ba76c11856abf421426b4fee01400f0d27def2f790e8768b7ebed0fba399cfea",
+      "bytes": 6144
+    },
+    {
+      "key": "mbt",
+      "url": "https://api.crossref.org/works/10.1002/stvr.456",
+      "status": 200,
+      "sha256": "6193d8bab514c7d1ed623d290baf01340cb2197e031c1af67bcf9f9f795d7c08",
+      "bytes": 13619
+    },
+    {
+      "key": "dataflow_doi",
+      "url": "https://api.crossref.org/works/10.14778/2824032.2824076",
+      "status": 200,
+      "sha256": "7a74d4edcc1e440cf960eb03d627bced94f848e9cbb330189b84465294d57a22",
+      "bytes": 10289
+    },
+    {
+      "key": "millwheel",
+      "url": "https://www.vldb.org/pvldb/vol6/p1033-akidau.pdf",
+      "status": 200,
+      "sha256": "2131f6f8b7ec5ede35559ab1a68e8d3697c1a27edf1d381efd0f49b778da9159",
+      "bytes": 517756
+    },
+    {
+      "key": "dataflow",
+      "url": "https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf",
+      "status": 200,
+      "sha256": "7eeb8be6b52f2a9d2eb509a8616f748831fb48fab59ef2f5e83fca7b374bea18",
+      "bytes": 365591
+    }
+  ],
+  "official_cfp_verified_today": false,
+  "notes": [
+    "Official CFP and CTAN curl retries with escalated network execution also returned proxy CONNECT 403.",
+    "Inherited VENUE_REQUIREMENTS.md is dated 2026-10-13, without a preserved CFP response body; treat its table as provisional until owner confirms official page.",
+    "Upstream acmart v2.20 retrieved successfully via GitHub API; latest listed tag matches pinned earlier template."
+  ]
+}

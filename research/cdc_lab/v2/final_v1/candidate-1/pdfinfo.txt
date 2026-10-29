@@ -1,0 +1,20 @@
+Title:           CDC Replay Correctness Lab: Making Stable but Incorrect State Visible
+Subject:         -  Software and its engineering  ->  Software testing and debugging.-  Information systems  ->  Data replication tools.
+Creator:         LaTeX with acmart 2026/08/16 v2.20 Typesetting articles for the Association for Computing Machinery and hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+Producer:        pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) kpathsea version 6.4.1
+CreationDate:    Thu Oct 29 22:23:50 2026 UTC
+ModDate:         Thu Oct 29 22:23:50 2026 UTC
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           3
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       387254 bytes
+Optimized:       no
+PDF version:     1.7
