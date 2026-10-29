@@ -29,6 +29,7 @@ jobs:
           python research/cdc_lab/v2/final_v1/audit.py
           python research/cdc_lab/v2/final_v1/build.py --tex-directory /tmp/acmart --output /tmp/paper2-final-build
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: paper2-production-candidate
           path: /tmp/paper2-final-build

@@ -98,15 +98,26 @@ as a stale materialization write. A completed run's correctness requires whole-s
 oracle equality, independently of its redelivery stability.
 
 \section{Live demonstration experience}
-\begin{figure*}[t]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.88\textwidth]{figures/interactive-counterexample.png}
-\caption{Actual Chromium capture of the working interface. The stale-delete preset
-shows actual deleted v3 against expected live v4. Controls select strategy, ordering,
-checkpoint/interruption, seed and retention; the trace slider exposes each transition.}
-\Description{Browser interface showing controls, a stale-delete failure verdict, actual deleted version 3 and expected live version 4, incorrect key reason and trace controls.}
+\fbox{\parbox{0.91\columnwidth}{
+\textbf{Stale-delete preset: one key, native order}\\[3pt]
+\texttt{b0:v4}: live v4 $\longrightarrow$ \texttt{b0:v3}: delete v3\\[4pt]
+\begin{tabular}{lll}
+Policy & Actual & Oracle\\\hline
+Arrival & deleted v3 & live v4\\
+ID-only & deleted v3 & live v4\\
+Version-aware & live v4 & live v4
+\end{tabular}\\[4pt]
+\textbf{Inspect:} strategy switch; wrong-key reason;
+trace position; before/after state; stale-write decision.
+}}
+\caption{Readable typeset view of verified preset outputs, not a browser screenshot.
+The working interface exposes these states and interactions; the artifact retains
+the full Chromium screenshot. Distinct IDs do not protect against stale deletion.}
+\Description{Two deliveries, live version 4 then deleted version 3, leave arrival and ID-only replay wrong while version-aware replay matches the oracle.}
 \label{fig:ui}
-\end{figure*}
+\end{figure}
 The interface exposes nine scenarios, policy selection, native/reversed/seeded/version
 ordering, logical checkpoint and interruption offsets, and finite or unlimited ID
 capacity. Side-by-side states and wrong-key explanations identify a missing key,
