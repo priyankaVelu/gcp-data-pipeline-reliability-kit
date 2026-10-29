@@ -1,0 +1,2 @@
+Deterministic baseline failure reproduced in 2.342 seconds.
+Real-browser walkthrough passed: preset, strategies, trace, checkpoint/recovery, finite/unlimited ledger, conflict warning; no JS errors.

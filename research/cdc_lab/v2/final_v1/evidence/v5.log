@@ -1,0 +1,18 @@
+PASS: test_frozen_constants
+PASS: test_strategy_definitions
+PASS: test_canonical_determinism
+PASS: test_oracle_independence
+PASS: test_fault_injection_determinism
+PASS: test_conflict_entity_semantics
+PASS: test_committed_before_replay
+PASS: test_recovery_identifiability
+PASS: test_duplicate_control
+PASS: test_null_control
+PASS: test_late_control_temporal_distinction
+PASS: test_conflict_control_temporal_distinction
+PASS: test_metric_arithmetic_and_bounds
+PASS: test_expected_matrix_counts_without_execution
+PASS: test_reproducibility_metadata_shape
+
+Experiment Suite V5 pre-result tests: PASS
+Validated: frozen constants, strategy definitions, independent oracle, deterministic injection, entity-level conflict semantics, all five control classes, committed-before-replay recovery, recovery identifiability, metric arithmetic/bounds, matrix counts, and reproducibility metadata.

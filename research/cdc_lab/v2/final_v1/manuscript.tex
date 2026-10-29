@@ -91,7 +91,8 @@ and replays from $c$. These are simulated logical checkpoints: no disk write,
 fsync, transactional source/sink coupling or real crash is provided. Distributed
 consistent cuts are a substantially stronger problem~\cite{snapshots}.
 
-For completed recovery runs, the trace marks pre-interruption events discarded at restore. Monotonicity counters
+For completed recovery runs, the trace marks events attempted before interruption
+that are discarded when the snapshot is restored. Monotonicity counters
 separate attempted writes, committed-prefix writes and recovered writes. Restore can
 lower a visible version because an earlier snapshot is reinstated; it is not counted
 as a stale materialization write. A completed run's correctness requires whole-state
@@ -200,7 +201,7 @@ streams and early rejection preclude throughput, cloud-cost or production conclu
 MillWheel studies persistent state and fault-tolerant streaming~\cite{millwheel}; the
 Dataflow Model treats correctness/latency/cost for unordered input~\cite{dataflow}.
 This lab does not reproduce either system. Its reference-specification approach sits
-within established model-based testing~\cite{mbt} ; it does not benchmark against that taxonomy or introduce a new test-oracle method. Interactive
+within established model-based testing~\cite{mbt}; it does not benchmark against that taxonomy or introduce a new test-oracle method. Interactive
 algorithm visualizations such as RaftScope~\cite{raftscope} predate this work. Our
 specific demonstration joins CDC stale-delete counterexamples, attempted/recovered
 trace evidence and probe-order-dependent ID expiry, rather than claiming invention
@@ -214,9 +215,9 @@ processing. A finite ID ledger is not a bound on total state. Claims are limited
 retained deterministic workloads; independent implementation replication and a
 broader prior-art review remain outstanding.
 
-From the repository root, run \texttt{python -m unittest discover -s tests -v}, frozen
-V4/V5 validation, and the V2 runner with a fresh output directory. The self-contained
-interface starts with \texttt{python -m pipeline\_reliability.cdc\_interactive}.
+The artifact provides commands for unit tests, frozen V4/V5 validation, and the V2
+runner with fresh output paths. Start the interface using Python's \texttt{-m}
+option with module \texttt{pipeline\_reliability.}\allowbreak\texttt{cdc\_interactive}.
 Retained artifacts record full source commit, dirty status, Python/platform, seeds,
 configurations, all samples, and workload/source/protocol hashes. The retained versioned evidence, a five-minute walkthrough, and fresh-output commands
 are available in the public artifact~\cite{artifact}. Logical checkpoint behavior
