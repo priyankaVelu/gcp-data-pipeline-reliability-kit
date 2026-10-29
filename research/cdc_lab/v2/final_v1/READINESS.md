@@ -58,12 +58,14 @@ claimed. Historical outcomes, including negative and neutral controls, remain in
    originality/concurrent-submission policies cannot be cleared from code alone.
 4. **Portal and author administration incomplete.** Confirm CMT demo-track entry,
    author accounts/ORCIDs/COIs, venue-specific declarations and intellectual-property
-   permissions. No DOI/ISBN/conference location/dates or rights notice is fabricated.
+   permissions. No DOI/ISBN/conference location/dates or rights notice is fabricated. The candidate suppresses the ACM reference-format block while authorship/publication metadata is unavailable; the class warns that this block is mandatory for multi-page papers. Restore and verify that front matter when real metadata is supplied, then rebuild.
 5. **Final owner editorial/visual approval.** Review actual production PDF after
    real authors are inserted; confirm contribution is sufficiently distinct and
    persuasive. Broader prior-art review and separately authored replication remain
    methodological limitations. Optional video has not been recorded/hosted; do not
    add a fictitious URL. Decide industry designation only if applicable.
+
+The source inventory in [PAPER1_OVERLAP.md](PAPER1_OVERLAP.md) also covers all 23 remote branch trees.
 
 ## Review boundaries
 
@@ -76,5 +78,5 @@ conflict detection. Ordered seeds repeat equivalent workloads, not independent
 statistical samples. Whole-state equality does not count external side effects.
 
 Paper 1 source missing; all available Paper 1-related V4/V5 artifacts untouched.
-Paper 3/QueryGuard lives on other branches and is untouched. Earlier Paper 2 papers,
+Other research (including QueryGuard) lives on other branches and is untouched. Earlier Paper 2 papers,
 figures, protocols and results are protected. PR targets main for human review only.

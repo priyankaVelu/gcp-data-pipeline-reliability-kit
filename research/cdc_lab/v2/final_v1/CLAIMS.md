@@ -50,5 +50,5 @@ Paper 1's submitted manuscript is absent from the main tree. V4/V5 code/results 
 available and show thematic overlap (silent corruption, independent oracle,
 replay/commit recovery). A defensible textual and duplicate-submission assessment
 requires the actual submitted paper and status; different titles are insufficient.
-Paper 3/QueryGuard is on separate branches, not in this main snapshot, and is not
+Other research (including QueryGuard) is on separate branches, not in this main snapshot, and is not
 modified. All pre-existing tracked files on main are protected by SHA-256.

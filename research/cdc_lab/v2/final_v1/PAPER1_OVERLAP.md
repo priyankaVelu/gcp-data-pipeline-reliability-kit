@@ -26,5 +26,7 @@ and any camera-ready/related versions. Compare text, figures, tables, claims,
 protocols and reused results; cite and disclose related work appropriately and
 review both venues' originality/concurrent-submission policies. Add any necessary
 cross-citation only after bibliographic/status details are verified; none is
-invented here. Paper 1 remains untouched. Paper 3/QueryGuard is outside this main
+invented here. Paper 1 remains untouched. Other research (including QueryGuard) is outside this main
 snapshot and its branch/history is untouched.
+
+A read-only inventory of all 23 remote branch trees found no .tex/.pdf/.bib/.docx manuscript outside research/cdc_lab. See evidence/PAPER_SOURCE_INVENTORY.json. No branch ref other than this preparation branch was changed.
