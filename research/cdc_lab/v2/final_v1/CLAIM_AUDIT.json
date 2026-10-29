@@ -1,0 +1,40 @@
+{
+  "baseline_comparison": {
+    "bounded": 36,
+    "principal": 126
+  },
+  "counts": {
+    "arrival": {
+      "correct": 24,
+      "incorrect": 12,
+      "rejected": 12
+    },
+    "id_only": {
+      "correct": 30,
+      "incorrect": 6,
+      "rejected": 12
+    },
+    "version": {
+      "correct": 36,
+      "incorrect": 0,
+      "rejected": 12
+    }
+  },
+  "evidence_sha256": {
+    "research/cdc_lab/results/run-1/results.json": "644ce5ecad5c826cdd34424dcd33dfe0620a01d5cdde6c1c040cb3b4529371a0",
+    "research/cdc_lab/v2/results/baseline-reproduction-1/results.json": "9a6dcc05befbb2a446cfc3ba39f2d0483dd23fba4dad67f4c72d2aee402cf1a9",
+    "research/cdc_lab/v2/results/isolated-1/results.json": "e72e3e3d0343ee7edff2eaa925e02e06526b62bfd01c2f25c4c780514859e6e8"
+  },
+  "expiry_rows": 72,
+  "independently_specified_canonical_targets": 144,
+  "limitations": [
+    "Specification assumes authoritative integer versions",
+    "Reexecution of existing implementation, not independent implementation replication",
+    "Retained runtimes are historical observations; no performance comparison"
+  ],
+  "principal_rows": 144,
+  "protected_files": 117,
+  "reexecuted_expiry_rows": 72,
+  "replayed_principal_rows": 144,
+  "status": "passed"
+}

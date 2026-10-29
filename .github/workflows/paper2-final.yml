@@ -1,0 +1,34 @@
+name: Paper 2 final candidate
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manuscript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Production TeX and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-publishers texlive-fonts-extra texlive-latex-extra texlive-science poppler-utils
+      - name: Pinned upstream ACM class
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir /tmp/acmart
+          for name in acmart.dtx acmart.ins ACM-Reference-Format.bst; do
+            gh api "repos/borisveytsman/acmart/contents/$name?ref=10d6d082e522c4034022f38437019ba75589456b" -H 'Accept: application/vnd.github.raw+json' > "/tmp/acmart/$name"
+          done
+          cd /tmp/acmart
+          latex -interaction=nonstopmode acmart.ins
+      - name: Audit evidence and build
+        run: |
+          python research/cdc_lab/v2/final_v1/audit.py
+          python research/cdc_lab/v2/final_v1/build.py --tex-directory /tmp/acmart --output /tmp/paper2-final-build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper2-production-candidate
+          path: /tmp/paper2-final-build

@@ -1,0 +1,13 @@
+{
+  "commit": "10d6d082e522c4034022f38437019ba75589456b",
+  "hashes": {
+    "ACM-Reference-Format.bst": "4342d27456645567ef1a027f6474e894715bc31d468f040142fa54540440ad04",
+    "acmart.cls": "784c4f2fb07a70d8a797ee9d1c63f441c10fbd2f915c9c615d28cda35c0b742a",
+    "acmart.dtx": "e29efd327f5c759f3d1f2e99dc8588c6a05b734c142f89c3e348161b893e44ff",
+    "acmart.ins": "fa7daaa9375775ce699f33f909667bdb83c0408fd8d67606926df86c346c4044"
+  },
+  "latest_listed_tag_rechecked": true,
+  "official_acm_distribution_rechecked": false,
+  "tag": "v2.20",
+  "template_repository": "https://github.com/borisveytsman/acmart"
+}
