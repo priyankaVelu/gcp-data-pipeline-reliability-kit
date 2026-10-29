@@ -13,7 +13,7 @@ Change-data capture consumers can produce a stable but incorrect materialization
 identity deduplication does not order distinct changes, and finite identity memory
 may hide conflicting historical payloads without changing the latest state.
 CDC Replay Correctness Lab is a local, interactive demonstration of these
- distinctions. Reviewers select ordering, replay policy, checkpoint/interruption
+ distinctions. Reviewers select ordering, replay policy, checkpoint and interruption
 boundaries and ID retention, inspect event-by-event decisions, and compare actual
 state with an independent canonical oracle. A guaranteed stale-delete preset
 reproduces baseline failure without searching seeds. Independent execution of the
@@ -22,7 +22,7 @@ isolated controls show that all three policies pass duplicate-only and ordered
 delete/reinsert workloads; an ID-only policy still fails the stale-delete case.
 A separate probe-order study exposes why retention-dependent conflict detection
 cannot be inferred from final-state equality. The contribution is an inspectable,
-reproducible educational/diagnostic artifact, not a new CDC algorithm or an
+reproducible educational and diagnostic artifact, not a new CDC algorithm or an
 exactly-once guarantee.
 \end{abstract}
 \ccsdesc[500]{Software and its engineering~Software testing and debugging}
@@ -123,7 +123,7 @@ The interface exposes nine scenarios, policy selection, native, reversed, seeded
 ordering, logical checkpoint and interruption offsets, and finite or unlimited ID
 capacity. Side-by-side states and wrong-key explanations identify a missing key,
 stale version, unexpected version, or payload/tombstone mismatch. Trace rows show
-phase, source offset, event identity, applied/duplicate/stale/conflict decisions and
+phase, source offset, event identity, applied, duplicate, stale or conflict decisions and
 ledger size. A slider reveals state after the selected transition. Invalid controls
 produce an explicit error; rejected or conflict-stopped runs have no completed
 correctness verdict.
@@ -146,14 +146,14 @@ processing stops. Switch to whole-input validation to see rejection before repla
 \end{enumerate}
 The allocation is a presenter script, not an observed five-minute usability study.
 HTTP integration tests cover preflight rejection. Real Chromium automation executes
-the preset, policy switches, trace stepping, recovery and finite/unlimited-ledger
+the preset, policy switches, trace stepping, recovery and finite and unlimited ledger
 interactions with no JavaScript errors. The browser uses the built wheel outside the repository.
 
 \section{Evidence and isolated controls}
 The protocol was repository-committed before implementation and measurements.
 A new execution of the unchanged original runner reproduced all non-timing fields
 of its 126 principal and 36 bounded observations. Artifact validation checked original
-and new SHA-256 manifests, CSV/JSON field parity, source/configuration hashes and
+and new SHA-256 manifests, CSV/JSON field parity, source and configuration hashes and
 row counts. This is independent execution, not replication by a separately authored
 implementation. Timing samples were intentionally not required to match.
 
@@ -199,11 +199,11 @@ streams and early rejection preclude throughput, cloud-cost or production conclu
 
 \section{Related work, limits and reproducibility}
 MillWheel studies persistent state and fault-tolerant streaming~\cite{millwheel}; the
-Dataflow Model treats correctness/latency/cost for unordered input~\cite{dataflow}.
+Dataflow Model treats correctness, latency and cost for unordered input~\cite{dataflow}.
 This lab does not reproduce either system. Its reference-specification approach sits
 within established model-based testing~\cite{mbt}; it does not benchmark against that taxonomy or introduce a new test-oracle method. Interactive
 algorithm visualizations such as RaftScope~\cite{raftscope} predate this work. Our
-specific demonstration joins CDC stale-delete counterexamples, attempted/recovered
+specific demonstration joins CDC stale-delete counterexamples, attempted and recovered
 trace evidence and probe-order-dependent ID expiry, rather than claiming invention
 of visualization, idempotency, versions or checkpoints.
 
@@ -218,7 +218,7 @@ broader prior-art review remain outstanding.
 The artifact provides commands for unit tests, frozen V4/V5 validation, and the V2
 runner with fresh output paths. Start the interface using Python's \texttt{-m}
 option with module \texttt{pipeline\_reliability.}\allowbreak\texttt{cdc\_interactive}.
-Retained artifacts record full source commit, dirty status, Python/platform, seeds,
+Retained artifacts record full source commit, dirty status, Python and platform, seeds,
 configurations, all samples, and hashes of the workload, source and protocol. The retained versioned evidence, a five-minute walkthrough, and fresh-output commands
 are available in the public artifact~\cite{artifact}. Logical checkpoint behavior
 is not durable crash recovery; preflight rejection is not online detection.
