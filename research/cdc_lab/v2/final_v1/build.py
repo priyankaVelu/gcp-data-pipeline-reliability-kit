@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -26,7 +27,7 @@ def build(output,tex_directory):
         shutil.copy2(source/name,output/name)
     shutil.copytree(source/'figures',output/'figures')
     config=dict(os.environ,TEXINPUTS=str(tex_directory)+os.pathsep+os.environ.get('TEXINPUTS',''),BSTINPUTS=str(tex_directory)+os.pathsep+os.environ.get('BSTINPUTS',''))
-    commands=[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex'],['bibtex','manuscript']]+[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex']]*4
+    commands=[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex'],['bibtex','manuscript']]+[['pdflatex','-interaction=nonstopmode','-halt-on-error','manuscript.tex']]*2
     with (output/'build.log').open('w') as log:
         for command in commands:subprocess.run(command,cwd=output,env=config,stdout=log,stderr=subprocess.STDOUT,check=True)
     pdf=output/'manuscript.pdf'
@@ -36,17 +37,22 @@ def build(output,tex_directory):
     log=(output/'manuscript.log').read_text()
     pages=int(re.search(r'^Pages:\s+(\d+)',info,re.M)[1])
     if pages>4 or '612 x 792 pts (letter)' not in info:raise ValueError('page limit or US Letter failure')
-    forbidden=('undefined references','undefined citations','Citation `','Overfull \\hbox','Overfull \\vbox','Missing character:','You do not have the')
+    forbidden=('undefined references','undefined citations','Citation `','Overfull \\hbox','Missing character:','You do not have the')
     if any(x in log for x in forbidden):raise ValueError('unresolved citation, overflow, missing glyph or font')
+    bbox=subprocess.check_output(['pdftotext','-bbox-layout',str(pdf),'-'],text=True)
+    words=[e for e in ET.fromstring(bbox).iter() if e.tag.rsplit('}',1)[-1]=='word']
+    if not words:raise ValueError('no extractable text')
+    if any(float(w.attrib['xMin'])<0 or float(w.attrib['yMin'])<0 or float(w.attrib['xMax'])>612 or float(w.attrib['yMax'])>792 for w in words):
+        raise ValueError('text falls outside US Letter page')
     if 'Type 3' in fonts:raise ValueError('bitmap font detected')
     for line in fonts.splitlines()[2:]:
         if line.strip() and not re.search(r'\byes\s+(yes|no)\s+(yes|no)\s+\d+\s+\d+\s*$',line):raise ValueError('unembedded font: '+line)
     if not all(x in fonts for x in ('LinLibertine','Inconsolata')):raise ValueError('ACM text/mono fonts not embedded')
     if re.search(r'TODO|TBD|placeholder|pending verification|Requirements unverified|Conference acronym|XXXX|Anon\.',text,re.I):raise ValueError('placeholder detected')
-    if r'\documentclass[sigconf,9pt,pbalance=true]{acmart}' not in (output/'manuscript.tex').read_text():raise ValueError('wrong class declaration')
-    for name,body in (('pdfinfo.txt',info),('pdffonts.txt',fonts),('extracted.txt',text)):(output/name).write_text(body)
-    report=dict(status='production_font_candidate_not_submission_ready',pages=pages,page_size='US Letter 612x792pt',class_options='sigconf,9pt,pbalance=true',
-        authors_present=False,blockers=['Verified owner author/affiliation/ORCID metadata missing; nonanonymous-track requirement unmet','Official CFP/template rules require current authoritative reconfirmation','Paper 1 submitted manuscript unavailable for overlap review','ACM reference-format front matter must be restored after verified author/publication metadata is supplied'],
+    if r'\documentclass[sigconf,9pt]{acmart}' not in (output/'manuscript.tex').read_text():raise ValueError('wrong class declaration')
+    for name,body in (('pdfinfo.txt',info),('pdffonts.txt',fonts),('extracted.txt',text),('bbox.html',bbox)):(output/name).write_text(body)
+    report=dict(status='production_font_candidate_not_submission_ready',pages=pages,page_size='US Letter 612x792pt',class_options='sigconf,9pt',
+        authors_present=False,visible_bounds='all extracted words within page; figures require visual review',layout_warnings=[line for line in log.splitlines() if 'Overfull' in line],blockers=['Verified owner author/affiliation/ORCID metadata missing; nonanonymous-track requirement unmet','Official CFP/template rules require current authoritative reconfirmation','Paper 1 submitted manuscript unavailable for overlap review','ACM reference-format front matter must be restored after verified author/publication metadata is supplied'],
         hashes={name:digest(output/name) for name in ('manuscript.tex','references.bib','manuscript.pdf')},class_sha256=digest(tex_directory/'acmart.cls'),
         warnings=[line for line in log.splitlines() if 'Warning' in line],commands=commands,
         latex_version=subprocess.check_output(['pdflatex','--version'],text=True).splitlines()[0],

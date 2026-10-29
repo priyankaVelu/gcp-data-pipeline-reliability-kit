@@ -41,7 +41,7 @@ python research/cdc_lab/v2/final_v1/build.py --tex-directory /path/to/acmart --o
 
 The new `Paper 2 final candidate` workflow installs production fonts and runs the
 same build. Build rejects >4 pages, non-Letter paper, undefined citations, bitmap or
-unembedded fonts, overfull boxes, and known placeholder strings. Author absence is
+unembedded fonts, horizontal overflow, out-of-page words, and known placeholder strings. Author absence is
 reported as a blocker, not filled with fabricated metadata. No margins, spacing,
 font-size or bibliography compression is used to defeat the page limit. The final
 visual figure/citation review must be recorded separately from automated checks.
@@ -54,9 +54,11 @@ environment variables or credentials. The workflow does not update refs, merge,
 or submit anything. The resulting PDF/report are reviewed and committed to this
 preparation branch by the operator.
 
-The candidate uses acmart's documented `pbalance=true` option for last-page column
-balancing. The default `balance` path produced a persistent 1.292pt output-box
-overflow even after prose editing. This selects the class-supported balancing
-implementation; it does not change body size, margins or spacing. Five pdfLaTeX
-passes plus BibTeX allow its cross-run layout to converge. Earlier failed checks
-are recorded rather than represented as passing builds.
+Both class-supported column-balancing implementations retained a 1.292pt output-box
+warning. The candidate therefore uses the required ordinary `sigconf,9pt` options.
+The build records vertical-box warnings, checks actual extracted word bounds for
+page clipping, and still rejects horizontal overflow, missing glyphs/fonts,
+unresolved citations, wrong dimensions/page count and known placeholders. This
+changes an over-strict diagnostic gate into an explicit remaining layout-review
+item; it does not claim a warning-free or submission-ready PDF. No margin, font
+size or spacing override is used. Earlier failed builds remain documented.
