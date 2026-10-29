@@ -67,7 +67,7 @@ shares the tested model with the V2 experiment runner.}
 \Description{Dataflow separates the canonical batch oracle from scenario generation and three replay policies, then compares their traces and final states.}
 \label{fig:architecture}
 \end{figure}
-The system has a standard-library Python HTTP server, self-contained HTML/JavaScript,
+The system has a Python HTTP server from the standard library, embedded HTML and JavaScript,
 a replay model, two research runners and artifact validators. It needs no external
 service or front-end download. The installed wheel serves the same interface from
 outside the checkout. Requests describe a bounded synthetic scenario; they do not
@@ -119,7 +119,7 @@ the full Chromium screenshot. Distinct IDs do not protect against stale deletion
 \Description{Two deliveries, live version 4 then deleted version 3, leave arrival and ID-only replay wrong while version-aware replay matches the oracle.}
 \label{fig:ui}
 \end{figure}
-The interface exposes nine scenarios, policy selection, native/reversed/seeded/version
+The interface exposes nine scenarios, policy selection, native, reversed, seeded or version-based
 ordering, logical checkpoint and interruption offsets, and finite or unlimited ID
 capacity. Side-by-side states and wrong-key explanations identify a missing key,
 stale version, unexpected version, or payload/tombstone mismatch. Trace rows show
@@ -182,7 +182,7 @@ version guards in this final-state model. Arrival and ID-only fail all six stale
 configurations. Reverse post-recovery redelivery additionally makes arrival replay
 wrong; remembered identities contain that case for ID-only.
 
-A separate 72-row online matrix crosses policy, capacities 0/4/16/unlimited, three
+A separate 72-row online matrix crosses policy, capacities of 0, 4, 16 or unlimited, three
 recorded seeds and two probe orders. State and tombstones remain unbounded. In
 \emph{conflict-first}, version-aware replay detects the expired-ID conflict only with
 unlimited memory. In \emph{exact-then-conflict}, capacities 4/16 detect it after exact
