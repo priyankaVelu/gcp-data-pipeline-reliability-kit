@@ -1,10 +1,9 @@
 # Related work and contribution boundaries
 
-The focused inherited review has primary PVLDB papers for MillWheel and Dataflow,
-DOI bibliographic metadata for Chandy/Lamport and Utting et al., and pinned primary
-Debezium/RaftScope repositories. The original verification record is preserved at
-`../submission/LITERATURE_VERIFICATION.json`; it is historical evidence, not proof
-of a successful retrieval today. No comprehensive novelty search is claimed.
+The current audit retrieved both primary PVLDB papers for MillWheel and Dataflow,
+rechecked DOI bibliographic metadata for Chandy/Lamport and Utting et al., and pinned primary
+Debezium/RaftScope repositories. Successful current response hashes/metadata are recorded in `LITERATURE_CHECK.json`. The original verification record is preserved at
+`../submission/LITERATURE_VERIFICATION.json`; it remains historical evidence rather than a substitute for the new checks. No comprehensive novelty search is claimed.
 
 | Work | Appropriate use in candidate | What is not established |
 |---|---|---|

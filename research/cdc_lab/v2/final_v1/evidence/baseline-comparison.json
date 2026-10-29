@@ -1,0 +1,71 @@
+{
+  "counts": {
+    "bounded": 36,
+    "principal": 126
+  },
+  "note": "Independent execution of the original implementation, not independent implementation replication. Timing samples intentionally excluded.",
+  "original_metadata": {
+    "commit": "8e91b4b371d4eb090b38d70cf0ac1d07e2c864d9",
+    "generated_at": "2026-10-13T15:46:14.783747+00:00",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "protocol_sha256": "fa2ec559e21c68082f5b7c2b1dd3eeb0f54195c464ba9543274831b7e825f4ca",
+    "python": "3.12.14",
+    "repeats": 5,
+    "runner_sha256": "e34e49077d65e7aeb6a6ba05509d949a40775cfad42baaf7cb3d7cf8c43e542b",
+    "scenarios": [
+      "ordered",
+      "out_of_order",
+      "duplicates",
+      "delete_reinsert",
+      "conflicts",
+      "checkpoint",
+      "redelivery"
+    ],
+    "schema_version": "1.0",
+    "seeds": [
+      7,
+      17,
+      29
+    ],
+    "sizes": [
+      8,
+      64
+    ],
+    "tracked_dirty": false
+  },
+  "preservation": {
+    "base_commit": "ccfbe9756d1bfe7eec4e2e7a0a6ff35c740b0d96",
+    "files_checked": 85,
+    "status": "preserved"
+  },
+  "reproduced_metadata": {
+    "commit": "583b90bb5a8bc33b99e4812c4a29399d416beb19",
+    "generated_at": "2026-10-29T21:42:26.399136+00:00",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "protocol_sha256": "fa2ec559e21c68082f5b7c2b1dd3eeb0f54195c464ba9543274831b7e825f4ca",
+    "python": "3.12.14",
+    "repeats": 5,
+    "runner_sha256": "e34e49077d65e7aeb6a6ba05509d949a40775cfad42baaf7cb3d7cf8c43e542b",
+    "scenarios": [
+      "ordered",
+      "out_of_order",
+      "duplicates",
+      "delete_reinsert",
+      "conflicts",
+      "checkpoint",
+      "redelivery"
+    ],
+    "schema_version": "1.0",
+    "seeds": [
+      7,
+      17,
+      29
+    ],
+    "sizes": [
+      8,
+      64
+    ],
+    "tracked_dirty": false
+  },
+  "status": "identical_non_timing_outcomes"
+}

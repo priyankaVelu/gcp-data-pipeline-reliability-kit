@@ -22,7 +22,7 @@ python research/cdc_lab/v2/run.py --output /tmp/new-isolated
 python -m pipeline_reliability.cdc_interactive --port 8765
 ```
 
-Fresh output paths are required. Existing V2 [walkthrough](../WALKTHROUGH.md) contains
+Fresh output paths are required. `evidence/` retains the actual new baseline/V2 executions, exact non-timing comparison, and local test/browser logs. Existing V2 [walkthrough](../WALKTHROUGH.md) contains
 presenter time allocations, not a measured usability study. Browser test:
 `node tests/cdc_browser_smoke.cjs` with Playwright and Chromium; see V2 README for
 installed-wheel environment variables. No remote frontend resources are needed.

@@ -1,0 +1,367 @@
+{
+  "checked": "2026-10-29",
+  "limitations": "Focused source audit, not systematic novelty search. NoREC removed from candidate.",
+  "records": [
+    {
+      "key": "millwheel",
+      "scope": "Primary paper text inspected for title/authors/stream-processing scope, not reproduced or benchmarked",
+      "sha256": "2131f6f8b7ec5ede35559ab1a68e8d3697c1a27edf1d381efd0f49b778da9159",
+      "status": 200,
+      "url": "https://www.vldb.org/pvldb/vol6/p1033-akidau.pdf"
+    },
+    {
+      "key": "dataflow",
+      "scope": "Primary paper text inspected for title/authors/stream-processing scope, not reproduced or benchmarked",
+      "sha256": "7eeb8be6b52f2a9d2eb509a8616f748831fb48fab59ef2f5e83fca7b374bea18",
+      "status": 200,
+      "url": "https://www.vldb.org/pvldb/vol8/p1792-Akidau.pdf"
+    },
+    {
+      "key": "snapshots",
+      "metadata": {
+        "DOI": "10.1145/214451.214456",
+        "author": [
+          {
+            "affiliation": [
+              {
+                "name": "Department of Computer Sciences, University of Texas at Austin, Austin, TX"
+              }
+            ],
+            "family": "Chandy",
+            "given": "K. Mani",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "first"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Stanford Research Institute, Menlo Park, CA"
+              }
+            ],
+            "family": "Lamport",
+            "given": "Leslie",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          }
+        ],
+        "container-title": [
+          "ACM Transactions on Computer Systems"
+        ],
+        "issue": "1",
+        "page": "63-75",
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              2
+            ]
+          ]
+        },
+        "title": [
+          "Distributed snapshots"
+        ],
+        "volume": "3"
+      },
+      "scope": "Bibliographic metadata; no new full-text comparison",
+      "sha256": "ba76c11856abf421426b4fee01400f0d27def2f790e8768b7ebed0fba399cfea",
+      "status": 200,
+      "url": "https://api.crossref.org/works/10.1145/214451.214456"
+    },
+    {
+      "key": "mbt",
+      "metadata": {
+        "DOI": "10.1002/stvr.456",
+        "author": [
+          {
+            "affiliation": [],
+            "family": "Utting",
+            "given": "Mark",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "first"
+          },
+          {
+            "affiliation": [],
+            "family": "Pretschner",
+            "given": "Alexander",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [],
+            "family": "Legeard",
+            "given": "Bruno",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          }
+        ],
+        "container-title": [
+          "Software Testing, Verification and Reliability"
+        ],
+        "issue": "5",
+        "page": "297-312",
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              8
+            ]
+          ]
+        },
+        "title": [
+          "A taxonomy of model\u2010based testing approaches"
+        ],
+        "volume": "22"
+      },
+      "scope": "Bibliographic metadata; no new full-text comparison",
+      "sha256": "6193d8bab514c7d1ed623d290baf01340cb2197e031c1af67bcf9f9f795d7c08",
+      "status": 200,
+      "url": "https://api.crossref.org/works/10.1002/stvr.456"
+    },
+    {
+      "key": "dataflow",
+      "metadata": {
+        "DOI": "10.14778/2824032.2824076",
+        "author": [
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Akidau",
+            "given": "Tyler",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "first"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Bradshaw",
+            "given": "Robert",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Chambers",
+            "given": "Craig",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Chernyak",
+            "given": "Slava",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Fern\u00e1ndez-Moctezuma",
+            "given": "Rafael J.",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Lax",
+            "given": "Reuven",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "McVeety",
+            "given": "Sam",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Mills",
+            "given": "Daniel",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Perry",
+            "given": "Frances",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Schmidt",
+            "given": "Eric",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          },
+          {
+            "affiliation": [
+              {
+                "name": "Google"
+              }
+            ],
+            "family": "Whittle",
+            "given": "Sam",
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ],
+            "sequence": "additional"
+          }
+        ],
+        "container-title": [
+          "Proceedings of the VLDB Endowment"
+        ],
+        "issue": "12",
+        "page": "1792-1803",
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              8
+            ]
+          ]
+        },
+        "title": [
+          "The dataflow model"
+        ],
+        "volume": "8"
+      },
+      "scope": "Bibliographic metadata; no new full-text comparison",
+      "sha256": "7a74d4edcc1e440cf960eb03d627bced94f848e9cbb330189b84465294d57a22",
+      "status": 200,
+      "url": "https://api.crossref.org/works/10.14778/2824032.2824076"
+    },
+    {
+      "key": "debezium",
+      "ref": "d9e8eeb71f617586ac2cff41ebef2ca7f4ee308e",
+      "scope": "Pinned primary project documentation inspected",
+      "sha256": "652d73ecc0e995e870935c9d906646262a169c04f4bdf094b629c7af2d80e91e",
+      "source": "https://github.com/debezium/debezium/blob/d9e8eeb71f617586ac2cff41ebef2ca7f4ee308e/documentation/modules/ROOT/pages/connectors/postgresql.adoc",
+      "status": 200
+    },
+    {
+      "key": "raftscope",
+      "ref": "5b0c10ab51f873721895e7470b49e04c94bf826f",
+      "scope": "Primary README inspected; project identifies visualization and JavaScript model",
+      "sha256": "466d94e952cf2bb3e69acf1d7f1ae8d70c897b8d6f347c19a0dcd614c4987e9b",
+      "source": "https://github.com/ongardie/raftscope/blob/5b0c10ab51f873721895e7470b49e04c94bf826f/README",
+      "status": 200
+    }
+  ]
+}

@@ -27,7 +27,7 @@ installed setuptools 84.0.0; no failed/absent isolated build is counted as passi
 
 Fresh original runner execution produced 126 principal and 36 bounded rows, all
 non-timing fields matching historical run-1. Fresh V2 execution produced 144 principal
-and 72 expiry rows in `/tmp`, preserving committed results. The new audit independently
+and 72 expiry rows in fresh directories, retained under `evidence/`, preserving older committed results. The new audit independently
 reduces canonical maxima, replays all 144 retained principal rows, reexecutes all 72
 expiry rows and checks every technical field/digest. Correct/incorrect/rejected:
 arrival 24/12/12, ID-only 30/6/12, version-aware 36/0/12. No new performance result is

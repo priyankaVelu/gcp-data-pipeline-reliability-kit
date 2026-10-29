@@ -7,6 +7,9 @@ permissions:
   contents: read
 jobs:
   manuscript:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,9 +30,17 @@ jobs:
       - name: Audit evidence and build
         run: |
           python research/cdc_lab/v2/final_v1/audit.py
-          python research/cdc_lab/v2/final_v1/build.py --tex-directory /tmp/acmart --output /tmp/paper2-final-build
+          python research/cdc_lab/v2/final_v1/build.py --tex-directory /tmp/acmart --output /tmp/paper2-final-build > /tmp/paper2-build-driver.log 2>&1
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: paper2-production-candidate
           path: /tmp/paper2-final-build
+      - name: API-retrievable diagnostics (artifact endpoint fallback)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python research/cdc_lab/v2/final_v1/package_build.py /tmp/paper2-final-build /tmp/paper2-build-driver.log /tmp/paper2-build-blob.json
+          blob_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/blobs" --method POST --input /tmp/paper2-build-blob.json --jq .sha)
+          echo "::notice title=Production build evidence blob::$blob_sha"

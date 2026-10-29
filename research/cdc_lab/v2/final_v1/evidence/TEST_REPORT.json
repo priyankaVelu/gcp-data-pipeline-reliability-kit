@@ -1,0 +1,34 @@
+{
+  "browser": {
+    "chromium": "Chromium 151.0.7922.173 built on Debian GNU/Linux 13 (trixie)",
+    "counterexample_seconds": 2.342,
+    "javascript_errors": 0,
+    "playwright": "1.62.1",
+    "status": "passed"
+  },
+  "installed_wheel_smoke": {
+    "cwd": "/tmp",
+    "scenarios": 9,
+    "status": "passed"
+  },
+  "notes": [
+    "Built wheel directly using setuptools.build_meta; build frontend not installed locally",
+    "No cloud credentials or client/employer data used",
+    "CFP access attempts failed and are not passing verification checks"
+  ],
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "source_commit": "583b90bb5a8bc33b99e4812c4a29399d416beb19",
+  "unit_tests": {
+    "failed": 0,
+    "passed": 57,
+    "skipped": 0
+  },
+  "v4": "passed pre-result validation",
+  "v5": {
+    "failed": 0,
+    "passed": 15,
+    "skipped": 0
+  },
+  "wheel_sha256": "049412a712b8c0e8114a0b6d8c383e917a668c85edb2c224a24945449c25c7c2"
+}
